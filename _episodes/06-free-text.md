@@ -295,7 +295,7 @@ And all this using a few commands on an otherwise unassuming but very powerful c
 ## Option 3: A webpage
 
 ### Grabbing a text, cleaning it up
-
+犬の日記
 We're going to work with `diary.html`.
 
 Let's look at the file.
@@ -333,7 +333,7 @@ $ less -N diary.html
 {: .output}
 
 We're going to start by using the `sed` command. The command allows you to edit files directly.
-
+sedコマンド265－330の行を消します。
 ~~~
 $ sed '265,330d' diary.html > diary-nofoot.txt
 ~~~
@@ -343,6 +343,7 @@ The command `sed` in combination with the `d`
 value will look at `diary.html` and delete all
 values between the rows specified. The `>` action then
 prompts the script to this edited text to the new file specified.
+リダイレクト機能で編集したファイルを新しいファイルに保存します。
 
 ~~~
 $ sed '1,221d' diary-nofoot.txt > diary-noheadfoot.txt
@@ -350,11 +351,15 @@ $ sed '1,221d' diary-nofoot.txt > diary-noheadfoot.txt
 {: .bash}
 
 This does the same as before, but for the header.
+同じようにヘッダ－も削除します。
 
 You now have a cleaner text. The next step is to
 prepare it even further for rigorous analysis.
+ちょっときれいなテキストができました。
+次のステップを実行します。
 
 First we wil remove all the html tags. Type and run:
+タブを消します。以下のように消します。
 
 ~~~
 $ sed -e 's/<[^>]*>//g' diary-noheadfoot.txt > diary-notags.txt
@@ -362,9 +367,11 @@ $ sed -e 's/<[^>]*>//g' diary-noheadfoot.txt > diary-notags.txt
 {: .bash}
 
 Here we are using a regular expression (see the [Library Carpentry regular expression lesson](https://librarycarpentry.org/lc-data-intro/01-regular-expressions/) to find all valid html tags (anything within angle brackets) and delete them). This is a complex regular expression, so don't worry too much about how it works! The script also requires the use of both the output redirect `>` we have seen and the input redirect `<` we haven't seen.
+HTMLタグを表示するのに正規表現を使っています。このタグのだいなりしょうなり記号で囲まれたところ、正規表現レッスンで、HTMLタグを削除というのがでてくる。
 
 We're going to start by using the `tr` command, used for translating or
 deleting characters. Type and run:
+ここがこの正規表現で削除します。複雑な正規表現なのであまり深く考えなくともいいです。このスクリプトも同様に
 
 ~~~
 $ tr -d '[:punct:]\r' < diary-notags.txt > diary-notagspunct.txt
@@ -373,8 +380,10 @@ $ tr -d '[:punct:]\r' < diary-notags.txt > diary-notagspunct.txt
 
 This uses the translate command and a special syntax to remove all punctuation
 (`[:punct:]`) and carriage returns (`\r`).
+改行も削除しています。
 
 Finally regularise the text by removing all the uppercase lettering.
+そうすると単語だけになります。
 
 ~~~
 $ tr [:upper:] [:lower:] < diary-notagspunct.txt > diary-clean.txt
@@ -383,7 +392,11 @@ $ tr [:upper:] [:lower:] < diary-notagspunct.txt > diary-clean.txt
 
 Open the `diary-clean.txt` in a text editor. Note how the text has been transformed ready for analysis.
 
+trコマンドを使って、特殊文字を削除します。最後に大文字小文字を消します。
+分析の準備ができました。
+
 ### Pulling a text apart, counting word frequencies
+出力順に並べ替える。
 
 We are now ready to pull the text apart.
 
@@ -413,6 +426,7 @@ And all this using a few commands on an otherwise unassuming but very powerful c
 
 Deborah S. Ray and Eric J. Ray, *Unix and Linux: visual quickstart guide*, 4th edition (2009).
 Invaluable (and not expensive) as a reference guide - especially if you only use the command line sporadically!
+本を読むとか正規表現の勉強
 
 [The Command Line Crash Course](https://learncodethehardway.org/unix/)
 'Learn UNIX the Hard Way' -- good for reminders of the basics.
@@ -422,6 +436,7 @@ Invaluable (and not expensive) as a reference guide - especially if you only use
 Another Coursera course, [Programming for Everybody (Python)](https://www.coursera.org/course/pythonlearn)
 is available and lasts 10 weeks, if you have 2-4 hours to spare per week.
 Python is popular in research programming as it is readable, relatively simple, and very powerful.
+Pythonで勉強する正規表現
 
 Bill Turkel and the Digital History community more broadly.
 The second lesson you did today was based on a lesson Bill has on [his website](https://williamjturkel.net/2013/06/15/basic-text-analysis-with-command-line-tools-in-linux/) and Bill is also a general editor of the [Programming Historian](https://programminghistorian.org/project-team). The Programming Historian is an open, collaborative book aimed at providing programming lessons to historians. Although the lessons are hooked around problems historians have, their lessons - which cover various programming languages - have a wide applicability - indeed today's course is based on two lessons I wrote with Ian Milligan, an historian at Waterloo, Canada - for ProgHist. Bill also has a wonderful tutorial on ['Named Entity Recognition with Command Line Tools in Linux'](http://williamjturkel.net/2013/06/30/named-entity-recognition-with-command-line-tools-in-linux/) which I thoroughly recommend if you want to automatically find, markup, and count names, places, and organisations in text files...
