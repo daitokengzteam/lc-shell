@@ -12,7 +12,7 @@ keypoints:
 - "Looping is the foundation for working smarter with the command line""ループは生産性向上の鍵"
 - "Loops help us to do the same (or similar) things to a bunch of items""なぜならこれは繰り返し実行することでワイルドカードやタブ補完とどうようにタイピングの量と間違いを避けることができる"
 ---
-### Writing a Loop
+### Writing a Loop ループを書く
 
 **Loops** are key to productivity improvements through automation as they allow us to execute
 commands repetitively. Similar to wildcards and tab completion, using loops also reduces the
@@ -94,7 +94,7 @@ rather than treat it as text or an external command.
 ループの中では、ループ変数の値は、先頭に `$` をつけて呼び出すことができます。
 `$` は、シェルのインタープリターのプログラムに、 **変数** を文字列やコマンドとして扱うのではなく変数の名前として扱い、値をその変数に代入するように指示します。
 
-> ## Double-quoting variable substitutions
+> ## Double-quoting variable substitutions 変数の代入とダブルクォーテーション
 >
 > Because real-world filenames often contain white-spaces,
 > we wrap `$filename` in double quotes (`"`). If we didn't, the
@@ -102,8 +102,12 @@ rather than treat it as text or an external command.
 > between two different filenames, which usually results in errors.
 > Therefore, it's best and generally safer to use `"$..."` unless
 > you are absolutely sure that no elements with white-space can ever
-> enter your loop variable (such as in [episode 5]({{ page.root }}/05-counting-mining/index.html#using-a-loop-to-count-words)).実際のファイルネームにはスペースを含むことがあるので変数をダブルクォート、タブルクォートしないとコマンドの区切りとします。これも大抵エラーになります。なので変数はダブルクォートで囲うのがベストで安全です。
-> どのファイルにもスペースが含まれていないと確信していない場合は囲むほうがいいです。
+> enter your loop variable (such as in [episode 5]({{ page.root }}/05-counting-mining/index.html#using-a-loop-to-count-words)).
+> 
+> 実際のファイルネームにはスペースが含まれることがあるので、
+> ここでは変数 `$filename` をダブルクォーテーションマーク (`"`) で囲っています。
+> もしこれがないと、シェルはひとつのファイル名に含まれるスペースを、ふたつのファイル名の区切りとして扱ってしまい、エラーになるかもしれません。
+> このため、どのファイル名にもスペースが含まれていないと確信していない限りは、 `"$..."` のように変数名をダブルクォーテーションマークで囲うのがベストで安全です。
 {: .callout}
 
 In this example, the list is four filenames: 'a.txt', 'b.txt', 'c.txt', and 'd.txt'
@@ -122,17 +126,18 @@ the list only included these four items, the shell exits the `for` loop at that 
 インタープリターはファイル名を画面に出力し、 `cp` コマンドを `a.txt` に対して実行します（これは、ループの実行中にファイル名を表示するように指定しているためです）。
 2回めの繰り返しでは、 `$filename` は `b.txt` になります。このとき、シェルはファイル名 `b.txt` を画面に表示し、 `cp` コマンドを `b.txt` に対して実行します。同様に、 `c.txt` と `d.txt` にも実行します。リストにはファイルが4つしか含まれていないので、この時点でシェルは `for` ループを終了します。
 
-> ## Follow the Prompt
+> ## Follow the Prompt プロンプトを追う
 >
 > The shell prompt changes from `$` to `>` and back again as we were
 > typing in our loop. The second prompt, `>`, is different to remind
 > us that we haven't finished typing a complete command yet. A semicolon, `;`,
 > can be used to separate two commands written on a single line.
-> シェルプロンプトはドルマークから大なり記号に変わります。大なり記号はループの入力を完了していないことを示します。
-> 2つ以上使うときはセミコロンで区切る。
+> ループの中で文字を入力していると、シェルプロンプトはドルマークから大なり記号に変わり、またもとに戻ります。
+> ふたつ目のプロンプトの大なり記号は、ループの入力を完了していないことを示します。
+> 1行の中で2つ以上のコマンドを入力するには、セミコロン `;` が区切り文字として使えます。
 {: .callout}
 
-> ## Same Symbols, Different Meanings
+> ## Same Symbols, Different Meanings 同じシンボルでも異なる意味
 >
 > Here we see `>` being used as a shell prompt, but `>` can also be
 > used to redirect output from a command (i.e. send it somewhere else, such as to a file, instead of displaying the output in the terminal) ---
