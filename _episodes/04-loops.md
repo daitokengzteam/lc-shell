@@ -201,6 +201,7 @@ This is our first look at loops. We will run another loop in the
 ![For Loop in Action](../fig/shell_script_for_loop_flow_chart.svg)
 
 > ## Running the loop from a Bash script
+> ## Bashスクリプトでループを実行する
 >
 > Alternatively, rather than running the loop above on the command line, you can 
 > save it in a script file and run it from the command line without having to rewrite
@@ -220,6 +221,7 @@ This is our first look at loops. We will run another loop in the
 > > ```
 > > #!/bin/bash
 > > # This script loops through .txt files, returns the file name, first line, and last line of the file
+> > # このスクリプトはすべての .txt ファイルに対してループを実行し、ファイル名、ファイルの最初の行、ファイルの最後の行を出力します
 > > for file in *.txt
 > > do
 > > 	echo $file
