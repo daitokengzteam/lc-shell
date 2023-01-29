@@ -8,7 +8,7 @@ questions:
 - "Why should I use it?どうして使わないといけないの？"
 objectives:
 - "Describe the basics of the Unix shellシェルの基本を説明できるようになる。"
-- "Explain why and how to use the command lineなぜ使わないといけないようになるか説明が必要になる。"
+- "Explain why and how to use the command lineコマンドラインをなぜどのように使うのか説明できるようになる"
 keypoints:
 - "The shell is powerful"；シェルってパワフル？
 - "The shell can be used to copy, move, and combine multiple files"；シェルは、複数のファイルをコピーしたり、移動したり、結合するために使うことができます。
@@ -18,7 +18,7 @@ keypoints:
 初めに：シェルって何ですか？何故、私がシェルを使うべきなの？
 
 If you've ever had to deal with large amounts of data or large numbers of digital files scattered across your computer or a remote server, you know that copying, moving, renaming, counting, searching through, or otherwise processing those files manually can be immensely time-consuming and error-prone. Fortunately, there is an extraordinarily powerful and flexible tool designed for just that purpose.
-大量のデジタルファイルを自分のコンピュータとリモートにある大量のファイルを扱うには、ファイルのリネーム、集計、検索、
+あなたのコンピューターやリモートサーバーに散在する大量のデジタルファイルを自分のコンピュータとリモートにある大量のファイルを扱うには、ファイルのリネーム、集計、検索、またはその他の方法で処理すると、非常に時間がかかり、エラーが発生しやすくなります。幸いなことに、まさにその目的のために設計された非常に強力で柔軟なツールがあります。
 
 The shell (sometimes referred to as the "Unix shell", for the operating system where it was first developed) is a program that allows you to interact with your computer using typed text commands. It is the primary interface used on Linux and Unix-based systems, such as macOS, and can be installed optionally on other operating systems such as Windows. 
 
