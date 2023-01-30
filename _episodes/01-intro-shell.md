@@ -1,17 +1,17 @@
 ---
-title: "What is the shell?"
+title: "シェルって何？"
 teaching: 5
 exercises: 0
 questions:
-- "What is the shell?"
-- "What is the command line?"
-- "Why should I use it?"
+- "シェルって何？"
+- "コマンドラインって何？"
+- "どうして使わないといけないの？"
 objectives:
-- "Describe the basics of the Unix shell"
-- "Explain why and how to use the command line"
+- "シェルの基本を説明できるようになる。"
+- "コマンドラインをなぜどのように使うのか説明できるようになる"
 keypoints:
-- "The shell is powerful"
-- "The shell can be used to copy, move, and combine multiple files"
+- "シェルは強力です。"
+- "シェルを使用して、複数のファイルをコピー、移動、結合することができます。"
 ---
 ## はじめに：シェルって何ですか？なぜ、私がシェルを使うべきなの？
 
