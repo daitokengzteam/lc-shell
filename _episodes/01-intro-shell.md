@@ -10,8 +10,8 @@ objectives:
 - "Describe the basics of the Unix shellシェルの基本を説明できるようになる。"
 - "Explain why and how to use the command lineコマンドラインをなぜどのように使うのか説明できるようになる"
 keypoints:
-- "The shell is powerful"；シェルってパワフル？
-- "The shell can be used to copy, move, and combine multiple files"；シェルは、複数のファイルをコピーしたり、移動したり、結合するために使うことができます。
+- "The shell is powerfulシェルってパワフル？"
+- "The shell can be used to copy, move, and combine multiple filesシェルは、複数のファイルをコピーしたり、移動したり、結合するために使うことができます。"
 ---
 ## Introduction: What is the shell, and why should I use it?初めに：シェルって何ですか？何故、私がシェルを使うべきなの？
 
