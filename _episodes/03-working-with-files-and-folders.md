@@ -7,7 +7,7 @@ questions:
 - "How can I read files? ファイルを読むにはどうすればいいのですか？"
 objectives:
 - "Work with files and directories from the command line コマンドラインからファイルとディレクトリを操作します。"
-- "Use tab completion to limit typing タブ補完を使い入力を確定します。""
+- "Use tab completion to limit typing タブ補完を使い入力を確定します。"
 - "Use commands to print and view files and parts of files コマンドを使い、ファイルとファイルの一部を出力し、表示します。"
 - "Use commands to print and view files and parts of files "
 - "Use commands to move/rename, copy, and delete files コマンドを使い、ファイルの移動、名前の変更、コピー、削除をおこないます。"
