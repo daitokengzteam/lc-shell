@@ -6,7 +6,7 @@ teaching: 20
 授業時間: 20分
 
 exercises: 10
-練習時間：10分
+練習時間: 10分
 
 questions:
 - "How can I copy, move, and delete files and directories?"
