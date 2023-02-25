@@ -503,7 +503,7 @@ mv` コマンドと同様に、`cp`コマンドは古い名前と新しい名前
 ~~~
 ワイルドカードと正規表現
 ~~~
-　
+
 > The `?` wildcard matches one character. The `*` wildcard matches zero or
 > more characters. ゼロもしくは複数の文字　If you attended the lesson on regular expressions, do you
 > remember how you would express that as regular expressions?　
