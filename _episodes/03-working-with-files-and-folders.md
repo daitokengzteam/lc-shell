@@ -9,11 +9,12 @@ exercises: 10
 練習時間: 10分
 
 questions:
-- "How can I copy, move, and delete files and directories?" ファイルやディレクトリをコピー、移動、削除するにはどうすればいいのですか？
+- "How can I copy, move, and delete files and directories?" 
+- ファイルやディレクトリをコピー、移動、削除するにはどうすればいいのですか？
 - "How can I read files?"
-ファイルを読むにはどうすればいいのですか？
+- ファイルを読むにはどうすればいいのですか？
 objectives:
-目的
+目的:
 - "Work with files and directories from the command line"
 コマンドラインからファイルとディレクトリを操作します。
 - "Use tab completion to limit typing"
