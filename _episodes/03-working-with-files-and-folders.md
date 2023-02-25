@@ -589,6 +589,7 @@ hisotoryコマンドを使うことで、最新のセッションで入力した
 変数を指定することもできます。
 最初に、`NAME=` と入力し、その後で自分の名前を入力し、Enterキーを押します。
 次に、`echo "$NAME ライブラリカーペントリーはすごい！"`と入力し、Enterキーを押します。すると、どうなりますか？
+~~~
 
 >
 > You can combine both text and normal shell commands using `echo`, for example the
