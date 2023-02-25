@@ -34,7 +34,9 @@ title: "ファイルやディレクトリを操作する"
 ~~~
 
 ## Working with files and folders
-> ファイルとフォルダで作業を進めます。
+~~~
+ファイルとフォルダで作業を進めます。
+~~~
 
 As well as navigating directories, we can interact with files on the command line:
 we can read them, open them, run them, and even edit them. In fact, there's really
@@ -51,8 +53,9 @@ then we could automate that cropping work by using shell commands.
 ~~~
 Before getting started, we will use `ls` to verify where we are. Using `ls` periodically
 to view your options is useful to orient oneself.
-
-> 始める前に、`ls` を使い現在操作しているディレクトリ地を確認します。定期的に `ls` を使い、操作対象のファイルの一覧を表示することは、これから自分がなにをするのかを確認するために有効です。
+~~~
+始める前に、`ls` を使い現在操作しているディレクトリ地を確認します。定期的に `ls` を使い、操作対象のファイルの一覧を表示することは、これから自分がなにをするのかを確認するために有効です。
+~~~
 
 ~~~
 $ ls
@@ -66,8 +69,10 @@ Desktop      Downloads    Movies       Pictures
 
 We will try a few basic ways to interact with files. Let's first move into the
 `shell-lesson` directory on your desktop.
-> ファイルと対話するためのいくつかの基本的な方法を試します。
-> 最初に、デスクトップにある `shell-lesson` ディレクトリに移動してみましょう。
+~~~
+ファイルと対話するためのいくつかの基本的な方法を試します。
+最初に、デスクトップにある `shell-lesson` ディレクトリに移動してみましょう。
+~~~
 
 ~~~
 $ cd
@@ -81,8 +86,10 @@ $ pwd
 {: .output}
 
 Here, we will create a new directory and move into it:
-> ここでは、新しいディレクトリを作成し、そこに移動します
-> 
+~~~
+ここでは、新しいディレクトリを作成し、そこに移動します
+~~~
+
 ~~~
 $ mkdir firstdir
 $ cd firstdir
@@ -91,10 +98,15 @@ $ cd firstdir
 
 Here we used the `mkdir` command (meaning 'make directories') to create a directory
 named 'firstdir'. Then we moved into that directory using the `cd` command.
-> ここで、`mkdir`コマンド（`ディレクトリを作る`という意味）を使い、'firstdir'という名前のディレクトリを作りました。それから、`cd`コマンドを使い、そのディレクトリの中に移動しました。
+~~~
+ここで、`mkdir`コマンド（`ディレクトリを作る`という意味）を使い、'firstdir'という名前のディレクトリを作りました。
+それから、`cd`コマンドを使い、そのディレクトリの中に移動しました。
+~~~
 
 But wait! There's a trick to make things a bit quicker. Let's go up one directory.
-> でも、ちょっと待ってください！!これを早くするトリックがあります。1つ上のディレクトリに移動しましょう。
+~~~
+でも、ちょっと待ってください！!これを早くするトリックがあります。1つ上のディレクトリに移動しましょう。
+~~~
 
 ~~~
 $ cd ..
@@ -103,9 +115,10 @@ $ cd ..
 
 Instead of typing `cd firstdir`, let's try to type `cd f` and then hit the Tab key.
 We notice that the shell completes the line to `cd firstdir/`.
-> `cd firstdir` とタイプする代わりに、`cd f` とタイプして Tab キーを押してみましょう。
-> シェルが `cd firstdir/` の行を補完していることに気づきます。
-
+~~~
+`cd firstdir` とタイプする代わりに、`cd f` とタイプして Tab キーを押してみましょう。
+シェルが `cd firstdir/` の行を補完していることに気づきます。
+~~~
 
 > ## Tab for Auto-complete
 > Hitting tab at any time within the shell will prompt it to attempt to auto-complete
@@ -115,11 +128,13 @@ We notice that the shell completes the line to `cd firstdir/`.
 > try using tab again. We would encourage using this method throughout
 > today to see how it behaves (as it saves loads of time and effort!).
 {: .callout}
-
-> > タブの自動補完
-> > シェル内で任意のタイミングでタブを押すと、カレントディレクトリ内のファイルとサブディレクトリに基づき、行の自動補完を試みるようにプロンプトが表示されます。
-> > 2つまたはそれ以上のファイルで同じ文字がある場合、自動補完機能は最初の相違点までしか入力しません。その後に文字を追加し、再度Tabキーを使用して補完を試すことができます。今日一日この方法を使い、動作を確認することをお勧めします（時間と労力が大幅に節約されます！）。
-
+~~~
+タブの自動補完
+シェル内で任意のタイミングでタブを押すと、カレントディレクトリ内のファイルとサブディレクトリに基づき、行の自動補完を試みるようにプロンプトが表示されます。
+2つまたはそれ以上のファイルで同じ文字がある場合、自動補完機能は最初の相違点までしか入力しません。
+その後に文字を追加し、再度Tabキーを使用して補完を試すことができます。
+今日一日この方法を使い、動作を確認することをお勧めします（時間と労力が大幅に節約されます！）。
+~~~
 ### Reading files
 > ファイルを読む
 
@@ -129,7 +144,10 @@ If you are in `firstdir`, use `cd ..` to get back to the `shell-lesson` director
 Here there are copies of two public domain books downloaded from
 [Project Gutenberg](https://www.gutenberg.org/) along with other files we will
 cover later.
-> ここには、プロジェクトグーテンベルグ (https://www.gutenberg.org/) からダウンロードした2冊のパブリックドメインの図書のコピーと、後で紹介する他のファイルがあります。
+
+~~~
+ここには、プロジェクトグーテンベルグ (https://www.gutenberg.org/) からダウンロードした2冊のパブリックドメインの図書のコピーと、後で紹介する他のファイルがあります。
+~~~
 
 ~~~
 $ ls -lh
