@@ -13,6 +13,7 @@ objectives:
 keypoints:
 - "The shell can be used to copy, move, and combine multiple files"シェルは、複数のファイルのコピー、移動、結合で使うことができます。
 ---
+
 ## Working with files and folders
 > ファイルとフォルダで作業を進めます。
 
