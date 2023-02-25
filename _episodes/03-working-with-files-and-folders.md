@@ -9,24 +9,15 @@ exercises: 10
 練習時間: 10分
 
 questions:
-- "How can I copy, move, and delete files and directories?" 
-- ファイルやディレクトリをコピー、移動、削除するにはどうすればいいのですか？
-- "How can I read files?"
-- ファイルを読むにはどうすればいいのですか？
-objectives:
-目的:
-- "Work with files and directories from the command line"
-コマンドラインからファイルとディレクトリを操作します。
-- "Use tab completion to limit typing"
-タブ補完を使い入力を確定します。
-- "Use commands to print and view files and parts of files"
-コマンドを使い、ファイルとファイルの一部を出力し、表示します。
-- "Use commands to move/rename, copy, and delete files"
-コマンドを使い、ファイルの移動、名前の変更、コピー、削除をおこないます。
-keypoints:
-重要な点
-- "The shell can be used to copy, move, and combine multiple files"
-シェルは、複数のファイルのコピー、移動、結合で使うことができます。
+- "How can I copy, move, and delete files and directories?" ファイルやディレクトリをコピー、移動、削除するにはどうすればいいのですか？
+- "How can I read files?"ファイルを読むにはどうすればいいのですか？
+objectives:目的
+- "Work with files and directories from the command line"コマンドラインからファイルとディレクトリを操作します。
+- "Use tab completion to limit typing"タブ補完を使い入力を確定します。
+- "Use commands to print and view files and parts of files"コマンドを使い、ファイルとファイルの一部を出力し、表示します。
+- "Use commands to move/rename, copy, and delete files"コマンドを使い、ファイルの移動、名前の変更、コピー、削除をおこないます。
+keypoints:重要な点
+- "The shell can be used to copy, move, and combine multiple files"シェルは、複数のファイルのコピー、移動、結合で使うことができます。
 ---
 ## Working with files and folders
 > ファイルとフォルダで作業を進めます。
