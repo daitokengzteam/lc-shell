@@ -263,6 +263,7 @@ next screen and so on, then `q` to quit (return to the command prompt).
 ファイルを操作する別の方法は、一度に画面ずつ表示することです。
 最初の画面を見るには `less 829-0.txt` と入力して、’スペースキー’で次の画面が見られます。 
 `q`で終了（コマンドプロンプトに戻る）です。
+~~~
 
 ~~~
 $ less 829-0.txt
