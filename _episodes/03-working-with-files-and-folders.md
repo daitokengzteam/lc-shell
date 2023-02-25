@@ -87,7 +87,7 @@ $ pwd
 
 Here, we will create a new directory and move into it:
 ~~~
-ここでは、新しいディレクトリを作成し、そこに移動します
+ここでは、新しいディレクトリを作成し、そこに移動します。
 ~~~
 
 ~~~
@@ -139,12 +139,13 @@ We notice that the shell completes the line to `cd firstdir/`.
 > ファイルを読む
 
 If you are in `firstdir`, use `cd ..` to get back to the `shell-lesson` directory.
-> `firstdir` にいる場合は、`cd ..` を使い、 `shell-lesson`の ディレクトリに戻ります。
+~~~
+`firstdir` にいる場合は、`cd ..` を使い、 `shell-lesson`の ディレクトリに戻ります。
+~~~
 
 Here there are copies of two public domain books downloaded from
 [Project Gutenberg](https://www.gutenberg.org/) along with other files we will
 cover later.
-
 ~~~
 ここには、プロジェクトグーテンベルグ (https://www.gutenberg.org/) からダウンロードした2冊のパブリックドメインの図書のコピーと、後で紹介する他のファイルがあります。
 ~~~
@@ -170,7 +171,8 @@ drwxr-xr-x 1 riley staff  64B Feb 22 2017  firstdir
 The files `829-0.txt` and `33504-0.txt` holds the content of book #829
 and #33504 on Project Gutenberg. But we've forgot *which* books, so
 we try the `cat` command to read the text of the first file:
-> ファイルの`829-0.txt`と`33504-0.txt`は、Project Gutenbergにある書籍#829と#33504の本文ファイルです。どちらの本か忘れてしまったので、最初のファイルのテキストを読むために `cat` コマンドを試してみます。
+
+ファイルの`829-0.txt`と`33504-0.txt`は、Project Gutenbergにある書籍#829と#33504の本文ファイルです。どちらの本か忘れてしまったので、最初のファイルのテキストを読むために `cat` コマンドを試してみます。
 
 
 ~~~
