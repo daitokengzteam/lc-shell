@@ -1,44 +1,28 @@
 ---
-title: "Navigating the filesystem ファイルシステムを案内する"
-teaching: 20
-exercises: 10
-questions:
-- "How do you move around the filesystem in the shell?　シェルの中でどのように移動しますか？"
-objectives:
-- "Use shell commands to work with directories and files　コマンドを使って・・・"
-- "Use shell commands to find and manipulate data　コマンドを使ってデータを探して操作する"
-keypoints:
-- "Knowing where you are in your directory structure is key to working with the shell"
+タイトル: "ファイルシステムの操作"
+講義: 20
+演習: 10
+課題:
+- "シェルの中でどのように移動しますか？"
+目標:
+- "シェルコマンドを使ったディレクトリとファイルの操作"
+- "コマンドを使ったデータの検索と操作"
+キーポイント:
+- "ディレクトリ構造のどこにいるのかを知ることはシェルで作業するときの鍵である"
 ---
-## Navigating the shell
+## シェルの操作
 
-We will begin with the basics of navigating the Unix shell.
-シェルの操作の基本からはじめましょう
+シェルの操作の基本から始めましょう。
 
-Let's start by opening the shell. This likely results in seeing a black window with a cursor flashing next to a dollar sign.
-シェルを開きましょう。黒い画面と線がチカチカする画面が開きます。
-This is our command line, and the `$` is the command **prompt** to show that the system is ready for our input.
-これがコマンドラインでドルマークは出力する準備ができていることを示す。
-The appearance of the prompt will vary from system to system, depending on how the set up has been configured,
-but it usually ends with a `$`.
-見た目はシステムによって違うことがあります。シェルのセットアップ
-たいていドルマークで終わっているはずです。
+シェルを開いてみましょう。ドルマークの後にカーソルが点滅している黒い画面が開きます。
+これがコマンドラインで、`$`（ドルマーク）は**コマンドプロンプト**になります。これは、入力する準備ができていることを示します。
 
-When working in the shell, you are always *somewhere* in the computer's
-file system, in some folder (directory). We will therefore start by finding out
-where we are by using the `pwd` command, which you can use whenever you are unsure
-about where you are. It stands for "print working directory" and the result of the
-command is printed to your standard output, which is the screen.
-シェルを操作するときにはあなたはどこかのディレクトリにいつもいます。
-まず私達がどこのフォルダをみているかpwdというコマンドを使って探しましょう。
-pwdはprint working directoryの略で標準出力されます。
+見た目はシェルのセットアップ方法によって違うこともありますが、たいてい`$`で終わっています。
 
-Let's type `pwd` and hit enter to execute the command
-(Note that the `$` sign is used to indicate a command to be typed on the command prompt,
- but we never type the `$` sign itself, just what follows after it.):
-早速打ってみましょう。pwd
-ドルマークは打たなくてもよい
-この出力はあなたのホームディレクトリのパスです。
+シェルを操作するとき、通常あなたはどこかのフォルダ（ディレクトリ）にいます。まずどこのフォルダにいるのか、`pwd`というコマンドを使って探しましょう。
+`pwd`は"print working directory"の略で、コマンドの結果は標準出力である画面に表示されます。
+
+さっそく`pwd`と入力してEnterキーを押してみましょう。（`$`は入力せずに、その後に続くものだけを入力することに注意してください。`$`は、コマンドプロンプトに入力することを示しています）
 
 ~~~
 $ pwd
@@ -49,9 +33,7 @@ $ pwd
 ~~~
 {: .output}
 
-The output will be a path to your home directory. Let's check if we recognise it
-by looking at the contents of the directory. To do that, we use the `ls` command. This stands for "list" and the result is a print out of all the contents in the directory:
-それを確かめるためにフォルダの中身を見てみましょうlsとはlistの中身。もうちょっと詳細な情報もみてみましょう。
+出力されるのは、ホームディレクトリへのパスです。このディレクトリの中身を見て確認してみましょう。`ls`コマンドを使います。これは"list"の略で、ディレクトリ内のコンテンツがすべて表示されます。
 
 ~~~
 $ ls
