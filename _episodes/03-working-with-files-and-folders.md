@@ -1,5 +1,5 @@
 ---
-title: "Working with files and directories"
+title:"Working with files and directories"
 タイトル：ファイルやディレクトリを操作する
 
 teaching: 20
