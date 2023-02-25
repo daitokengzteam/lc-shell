@@ -250,6 +250,7 @@ If ten lines is not enough (or too much), we would check `man head`(or `head --h
 to see if there exists an option to specify the number of lines to get
 (there is: `head -n 20` will print 20 lines).
 ~~~
+~~~
 10行では足りない (あるいは多すぎる) 場合は、 `man head` (あるいは Windows では `head --help`) をチェックしてください。
 表示する行数を指定するオプションがあるかどうかを確認します。
 (表示する行数を特定するオプションはあります: `head -n 20` は20行を表示します)。
