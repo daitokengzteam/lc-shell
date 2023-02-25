@@ -515,7 +515,6 @@ mv` コマンドと同様に、`cp`コマンドは古い名前と新しい名前
 （正規表現は、シェルの機能ではありませんが、一部のコマンドではサポートしています。これについてはまた後で)
 ~~~
 
->
 > > ## Answer
 > > * The `?` wildcard matches the regular expression `.` (a dot)
 ~~~
