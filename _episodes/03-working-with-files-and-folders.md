@@ -386,14 +386,14 @@ $ ls
 {: .challenge}
 
 > ## Moving a file into a directory
-> ファイルをディレクトリの中に移動する。
+> > ファイルをディレクトリの中に移動する。
 
 >
 > If the last argument you give to the `mv` command is a directory, not a file,
 > the file given in the first argument will be moved to that directory. Try
 > using the `mv` command to move the file `gulliver-backup.txt` into the
 > `backup` folder.
-> `mv` コマンドに付ける最後の引数がファイルではなくディレクトリの場合、最初の引数で与えられたファイルはそのディレクトリに移動されます。試しに `mv` コマンドを使い、`gulliver-backup.txt` というファイルを `backup` というフォルダに移動してみてください
+> > `mv` コマンドに付ける最後の引数がファイルではなくディレクトリの場合、最初の引数で与えられたファイルはそのディレクトリに移動されます。試しに `mv` コマンドを使い、`gulliver-backup.txt` というファイルを `backup` というフォルダに移動してみてください
 
 >
 > > ## Answer
@@ -412,14 +412,14 @@ $ ls
 {: .challenge}
 
 > ## The wildcards and regular expressions 
->　ワイルドカードと正規表現
+> >　ワイルドカードと正規表現
 >　
 > The `?` wildcard matches one character. The `*` wildcard matches zero or
 > more characters. ゼロもしくは複数の文字　If you attended the lesson on regular expressions, do you
 > remember how you would express that as regular expressions?　
 > (Regular expressions are not a feature of the shell, but some commands support
 > them. We'll get back to that.)
-> `?`というワイルドカードは、一文字に一致します。`*`というワイルドカードは、ゼロもしくは複数の文字に一致します。もし正規表現のレッスンに参加されていたなら、正規表現をどのように表現するか覚えていますか？　（正規表現は、シェルの機能ではありませんが、一部のコマンドではサポートしています。これについてはまた後で)
+> >`?`というワイルドカードは、一文字に一致します。`*`というワイルドカードは、ゼロもしくは複数の文字に一致します。もし正規表現のレッスンに参加されていたなら、正規表現をどのように表現するか覚えていますか？　（正規表現は、シェルの機能ではありませんが、一部のコマンドではサポートしています。これについてはまた後で)
 
 
 
@@ -427,16 +427,16 @@ $ ls
 >
 > > ## Answer
 > > * The `?` wildcard matches the regular expression `.` (a dot)
-> > ワイルドカード`?`は、正規表現`.`（ピリオド）に一致します。
+> > > ワイルドカード`?`は、正規表現`.`（ピリオド）に一致します。
 
 > > * The `*` wildcard matches the regular expression `.*`
-> > ワイルドカード`*`は、正規表現`*`に一致します。
+> > > ワイルドカード`*`は、正規表現`*`に一致します。
 
 > {: .solution}
 {: .challenge}
 
 > ## Using `history`
-> hisroeryコマンドを使う
+> > hisroeryコマンドを使う
 
 > Use the `history` command to see a list of all the commands you've entered during the 
 > current session. You can also use <kbd>Ctrl</kbd> + <kbd>r</kbd> to do a reverse lookup. Hit <kbd>Ctrl</kbd> + <kbd>r</kbd>, 
@@ -451,7 +451,7 @@ $ ls
 > `history`. Note the command number, e.g. 2045. Recall the command by entering 
 > `!2045`. This will execute the command.　
 > history > history.txt 
-> hisotoryコマンドを使うことで、最新のセッションで入力したコマンドのリストを見ることができます。また、 `Ctrl + r`は逆引きにも使えます。`Ctrl + r`を押してから、探しているコマンドの一部を入力します。過去のコマンドも補完してくれます。` Enter` を押してコマンドを再度実行するか、矢印キーを押してコマンドを編集します。入力した文字列が過去の複数のコマンドに含まれている場合、`Ctrl + r`を繰り返してそれらのコマンドを順に表示させることができます。もし逆引きで探しているものが見つからなかったら、`Ctrl + `を使ってプロンプトに戻ります。もし履歴を保存し、後でスクリプトを作るためのコマンドを抜き出したいなら、`history > history.txt` で保存できます。これによりすべての履歴を `history.txt` というテキストファイルに出力し、後で編集できます。履歴からコマンドを呼び出すには、`history`と入力します。コマンド番号、例えば2045をメモしてください。コマンドを呼び出すには、`!2045`と入力します。これでコマンドが実行されます。
+> > hisotoryコマンドを使うことで、最新のセッションで入力したコマンドのリストを見ることができます。また、 `Ctrl + r`は逆引きにも使えます。`Ctrl + r`を押してから、探しているコマンドの一部を入力します。過去のコマンドも補完してくれます。` Enter` を押してコマンドを再度実行するか、矢印キーを押してコマンドを編集します。入力した文字列が過去の複数のコマンドに含まれている場合、`Ctrl + r`を繰り返してそれらのコマンドを順に表示させることができます。もし逆引きで探しているものが見つからなかったら、`Ctrl + `を使ってプロンプトに戻ります。もし履歴を保存し、後でスクリプトを作るためのコマンドを抜き出したいなら、`history > history.txt` で保存できます。これによりすべての履歴を `history.txt` というテキストファイルに出力し、後で編集できます。履歴からコマンドを呼び出すには、`history`と入力します。コマンド番号、例えば2045をメモしてください。コマンドを呼び出すには、`!2045`と入力します。これでコマンドが実行されます。
 
 
 
@@ -465,41 +465,41 @@ $ ls
 
 > The `echo` command simply prints out a text you specify. Try it out: `echo 'Library Carpentry is awesome!'`.
 > Interesting, isn't it?　
-> `echo` コマンドは、単に指定したテキストを出力するだけです。試してみてください。`echo ‘ライブラリカーペントリーはすごい！’`.面白いでしょう？
+> > `echo` コマンドは、単に指定したテキストを出力するだけです。試してみてください。`echo ‘ライブラリカーペントリーはすごい！’`.面白いでしょう？
 
 > You can also specify a variable. First type `NAME=` followed by your name, and hit enter.
 > Then type `echo "$NAME is a fantastic library carpentry student"` and hit enter. What happens? 
-> 変数を指定することもできます。最初に、`NAME=` と入力し、その後で自分の名前を入力し、Enterキーを押します。
+> > 変数を指定することもできます。最初に、`NAME=` と入力し、その後で自分の名前を入力し、Enterキーを押します。
 > 次に、`echo "$NAME ライブラリカーペントリーはすごい！"`と入力し、Enterキーを押します。すると、どうなりますか？
 
 >
 > You can combine both text and normal shell commands using `echo`, for example the
 > `pwd` command you have learned earlier today. You do this by enclosing a shell
 > command in `$(` and `)`, for instance `$(pwd)`. Now, try out the following:
-> `echo "Finally, it is nice and sunny on" $(date)`.
+> > `echo "Finally, it is nice and sunny on" $(date)`.
 > テキストと通常のシェルコマンドの両方を、 `echo` を使うことで、今日学んだ `pwd` コマンドのように組み合わせることができます。$(` and `)` のように、シェルコマンドを`$(` と `)` で囲みます。では、次のように試してみてください。
-> `echo $(date) はよい天気になりました`.
+> > `echo $(date) はよい天気になりました`.
 
 
 > Note that the output of the `date` command is printed together with the text
 > you specified. You can try the same with some of the other commands you have learned so far.
-> `date`コマンドの出力は、指定したテキストと一緒に表示されることに注意してください。これまでに学んだ他のコマンドで、同じように試してみてください。
+> > `date`コマンドの出力は、指定したテキストと一緒に表示されることに注意してください。これまでに学んだ他のコマンドで、同じように試してみてください。
 >
 > **Why do you think the echo command is actually quite important in the shell environment?**
-> ** echo コマンドは、実際にシェル環境でとても重要だと思いますが、なぜでしょうか？
+> > ** echo コマンドは、実際にシェル環境でとても重要だと思いますが、なぜでしょうか？
 
 >
 > > ## Answer
 > > You may think there is not much value in such a basic command like `echo`. However, from the moment you
 > > start writing automated shell scripts, it becomes very useful. For instance, you often need
 > > to output text to the screen, such as the current status of a script.　
-> > echo` のような基本的なコマンドは、あまり価値がないと思うかもしれません。しかし、自動化されたシェルスクリプトを書き始めた瞬間から、このコマンドは非常に便利なものになります。例えば、スクリプトの現在の状態など、画面にテキストを出力する必要があることがよくあります。　
+> > > echo` のような基本的なコマンドは、あまり価値がないと思うかもしれません。しかし、自動化されたシェルスクリプトを書き始めた瞬間から、このコマンドは非常に便利なものになります。例えば、スクリプトの現在の状態など、画面にテキストを出力する必要があることがよくあります。　
 
 
 > >
 > > Moreover, you just used a shell variable for the first time, which can be used to temporarily store information,
 > > that you can reuse later on. It will give many opportunities from the moment you start writing automated scripts.　
-> > さらに、最初にシェル変数を使い情報を一時的に保存し、後で再利用することができます。自動化スクリプトを書き始めると、その機会が多くなるでしょう。
+> > > さらに、最初にシェル変数を使い情報を一時的に保存し、後で再利用することができます。自動化スクリプトを書き始めると、その機会が多くなるでしょう。
 
 > {: .solution}
 {: .challenge}
