@@ -1,17 +1,17 @@
 ---
-title: "Working with files and directories" 
+title: "Working with files and directories"
 teaching: 20
 exercises: 10
 questions:
-- "How can I copy, move, and delete files and directories?" ファイルやディレクトリをコピー、移動、削除するにはどうすればいいのですか？
-- "How can I read files?"ファイルを読むにはどうすればいいのですか？
+- "How can I copy, move, and delete files and directories?"
+- "How can I read files?"
 objectives:
-- "Work with files and directories from the command line"コマンドラインからファイルとディレクトリを操作します。
-- "Use tab completion to limit typing"タブ補完を使い入力を確定します。
-- "Use commands to print and view files and parts of files"コマンドを使い、ファイルとファイルの一部を出力し、表示します。
-- "Use commands to move/rename, copy, and delete files"コマンドを使い、ファイルの移動、名前の変更、コピー、削除をおこないます。
+- "Work with files and directories from the command line"
+- "Use tab completion to limit typing"
+- "Use commands to print and view files and parts of files"
+- "Use commands to move/rename, copy, and delete files"
 keypoints:
-- "The shell can be used to copy, move, and combine multiple files"シェルは、複数のファイルのコピー、移動、結合で使うことができます。
+- "The shell can be used to copy, move, and combine multiple files"
 ---
 
 ## Working with files and folders
