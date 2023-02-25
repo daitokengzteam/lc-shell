@@ -41,9 +41,9 @@ graphical user interfaces (GUIs) for many tasks, such as editing formatted text
 documents (Word or OpenOffice), browsing the web, editing images, etc. But if we
 wanted to make the same crop on hundreds of images, say, the pages of a scanned book,
 then we could automate that cropping work by using shell commands.
-
-> ディレクトリを操作するだけでなく、コマンドラインでファイルを操作することができます。ファイルを読むこと、開くこと、実行すること、編集することができます。実際、シェルの中でできることに制限はありません。しかし、経験豊富なシェルユーザーでさえも、書式付きのテキストの編集、文書 (Word や OpenOffice) の編集、Web 閲覧、画像の編集など、多くの作業をグラフィカルユーザーインターフェース（GUI）に切り替えています。しかし、もし何百枚もの画像、たとえばスキャンした本のページを同じように切り抜きたい場合は、シェルコマンドを使えば、切り抜き作業を自動化できます。
-
+~~~
+ディレクトリを操作するだけでなく、コマンドラインでファイルを操作することができます。ファイルを読むこと、開くこと、実行すること、編集することができます。実際、シェルの中でできることに制限はありません。しかし、経験豊富なシェルユーザーでさえも、書式付きのテキストの編集、文書 (Word や OpenOffice) の編集、Web 閲覧、画像の編集など、多くの作業をグラフィカルユーザーインターフェース（GUI）に切り替えています。しかし、もし何百枚もの画像、たとえばスキャンした本のページを同じように切り抜きたい場合は、シェルコマンドを使えば、切り抜き作業を自動化できます。
+~~~
 Before getting started, we will use `ls` to verify where we are. Using `ls` periodically
 to view your options is useful to orient oneself.
 
