@@ -1,5 +1,5 @@
 ---
-title: "Working with files and directories"タイトル: ファイルやディレクトリを操作する
+title: "Working with files and directories" タイトル: ファイルやディレクトリを操作する
 teaching: 20授業時間: 20分
 exercises: 10練習時間: 10分
 questions:
