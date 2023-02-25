@@ -242,7 +242,7 @@ To save some typing, we introduce a very useful trick first.
 > up arrow to cycle through your previous commands. The down arrow cycles back
 > toward your most recent command. This is another important labour-saving
 > function and something we'll use a lot.
-> 空白のコマンドプロンプトにて、上矢印キーを押すと、カーソルの前に前回入力したコマンドが表示されることがわかります。上矢印キーを押し続けると、前のコマンドを順次表示させることができます。下矢印キーを押すと、最新のコマンドに戻ります。これも重要な省力化機能で、これから頻繁に使います。
+> > 空白のコマンドプロンプトにて、上矢印キーを押すと、カーソルの前に前回入力したコマンドが表示されることがわかります。上矢印キーを押し続けると、前のコマンドを順次表示させることができます。下矢印キーを押すと、最新のコマンドに戻ります。これも重要な省力化機能で、これから頻繁に使います。
 
 
 {: .callout}
@@ -309,7 +309,7 @@ $ head *.txt
 > As an exception, if a wildcard expression does not match any file, Bash
 > will pass the expression as a parameter to the command as it is. For example　
 > typing `ls *.pdf` results in an error message that there is no file called *.pdf.　
-> シェルはコマンドを実行する前に、ワイルドカードをファイルやディレクトリのリストに展開します。コマンドはそのワイルドカードを参照することはありません。例外として、ワイルドカードの表現がどのファイルにもマッチしない場合、Bash  はその式をそのままコマンドのパラメータとして渡します。例えば、ls *.pdf` と入力すると、エラーメッセージに*.pdfというファイルはありませんと表示されます。　
+> > シェルはコマンドを実行する前に、ワイルドカードをファイルやディレクトリのリストに展開します。コマンドはそのワイルドカードを参照することはありません。例外として、ワイルドカードの表現がどのファイルにもマッチしない場合、Bash  はその式をそのままコマンドのパラメータとして渡します。例えば、ls *.pdf` と入力すると、エラーメッセージに*.pdfというファイルはありませんと表示されます。　
 
 
 
@@ -361,7 +361,7 @@ $ ls
 > Just like the `mv` command, the `cp` command takes two arguments: the old name
 > and the new name. How would you make a copy of the file `gulliver.txt` called
 > `gulliver-backup.txt`? Try it!
-> ファイルを*移動*する代わりに、ファイルを*copy*（コピーを作成）したいとき、例えば、ファイルを変更する前にバックアップを作成する場合などです。mv` コマンドと同様に、`cp`コマンドは古い名前と新しい名前の2つの引数を取ります。`gulliver.txt` という名前のファイルのコピーは、どのように作成しますか？試してみてください。
+> > ファイルを*移動*する代わりに、ファイルを*copy*（コピーを作成）したいとき、例えば、ファイルを変更する前にバックアップを作成する場合などです。mv` コマンドと同様に、`cp`コマンドは古い名前と新しい名前の2つの引数を取ります。`gulliver.txt` という名前のファイルのコピーは、どのように作成しますか？試してみてください。
 > > ## Answer
 > > ~~~
 > > cp gulliver.txt gulliver-backup.txt
@@ -375,7 +375,7 @@ $ ls
 
 > Renaming a directory works in the same way as renaming a file. Try using the
 > `mv` command to rename the `firstdir` directory to `backup`.
-> ディレクトリ名の変更処理は、ファイル名の変更と同じ方法になります。試しに `mv` コマンドを使い、`firstdir`というディレクトリを `backup` に変更してみてください。
+> >ディレクトリ名の変更処理は、ファイル名の変更と同じ方法になります。試しに `mv` コマンドを使い、`firstdir`というディレクトリを `backup` に変更してみてください。
 
 > > ## Answer
 > > ~~~
