@@ -15,6 +15,7 @@ keypoints:
 - "The shell can be used to copy, move, and combine multiple files"
 ---
 
+~~~
 ---
 title: "ファイルやディレクトリを操作する" 
 講義: 20
@@ -30,6 +31,7 @@ title: "ファイルやディレクトリを操作する"
 重要事項:
 - "シェルは、複数のファイルのコピー、移動、結合で使うことができます。"
 ---
+~~~
 
 ## Working with files and folders
 > ファイルとフォルダで作業を進めます。
