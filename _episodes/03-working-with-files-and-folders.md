@@ -3,7 +3,7 @@ title: "Working with files and directories"
 タイトル: ファイルやディレクトリを操作する
 
 teaching: 20
-授業時間：20分
+授業時間: 20分
 
 exercises: 10
 練習時間：10分
