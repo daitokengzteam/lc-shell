@@ -144,7 +144,10 @@ We notice that the shell completes the line to `cd firstdir/`.
 今日一日この方法を使い、動作を確認することをお勧めします（時間と労力が大幅に節約されます！）。
 ~~~
 ### Reading files
-> ファイルを読む
+~~~
+ファイルを読む
+~~~
+
 
 If you are in `firstdir`, use `cd ..` to get back to the `shell-lesson` directory.
 ~~~
