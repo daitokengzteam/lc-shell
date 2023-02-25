@@ -11,7 +11,6 @@ exercises: 10
 questions:
 - "How can I copy, move, and delete files and directories?"
 ファイルやディレクトリをコピー、移動、削除するにはどうすればいいのですか？
-
 - "How can I read files?"
 ファイルを読むにはどうすればいいのですか？
 objectives:
