@@ -1,5 +1,6 @@
 ---
-title: "Working with files and directories"
+title: "Working with files and directories" ファイルやディレクトリを操作する
+
 teaching: 20
 exercises: 10
 questions:
