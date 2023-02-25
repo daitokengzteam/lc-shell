@@ -184,7 +184,7 @@ your terminal), leaving us with a new prompt and the last few lines of the book
 above this prompt.
 ~~~
 ターミナル画面が開き、本の内容全体が一度に流れ（ターミナルに表示されます）、新しいプロンプトが表示された後、このプロンプトの上に本の最後の数行が表示されます。
-
+~~~
 
 Often we just want a quick glimpse of the first or the last part of a file to
 get an idea about what the file is about. To let us do that, the Unix shell
