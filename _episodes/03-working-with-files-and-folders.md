@@ -195,10 +195,8 @@ provides us with the commands `head` and `tail`.
 ~~~
 ファイルの最初や最後のところをざっと見て、そのファイルの内容を把握したいことはよくあります。
 そのためにUnix シェルは `head` と `tail` というコマンドを用意しています。
-
-
-
 ~~~
+
 $ head 829-0.txt
 ~~~
 {: .bash}
