@@ -262,7 +262,6 @@ to see if there exists an option to specify the number of lines to get
 (表示する行数を特定するオプションはあります: `head -n 20` は20行を表示します)。
 ~~~
 
-
 Another way to navigate files is to view the contents one screen at a time.
 Type `less 829-0.txt` to see the first screen, `spacebar` to see the
 next screen and so on, then `q` to quit (return to the command prompt).
@@ -303,7 +302,6 @@ To save some typing, we introduce a very useful trick first.
 下矢印キーを押すと、最新のコマンドに戻ります。これも重要な省力化機能で、これから頻繁に使います。
 ~~~
 
-
 {: .callout}
 
 Hit the up arrow until you get to the `head 829-0.txt` command. Add a space
@@ -314,7 +312,6 @@ get `33504-0.txt`), to produce the following command:
 次にスペースを追加し、`33504-0.txt`（Tabキーを思い出してください、３と入力後にTabを入力すると`33504-0.txt`になります。）を入力します
 ~~~
 
-
 ~~~
 $ head 829-0.txt 33504-0.txt
 ~~~
@@ -323,14 +320,10 @@ $ head 829-0.txt 33504-0.txt
 ==> 829-0.txt <==
 The Project Gutenberg eBook, Gulliver's Travels, by Jonathan Swift
 
-
 This eBook is for the use of anyone anywhere at no cost and with
 almost no restrictions whatsoever.  You may copy it, give it away or
 re-use it under the terms of the Project Gutenberg License included
 with this eBook or online at www.gutenberg.org
-
-
-
 
 ==> 33504-0.txt <==
 The Project Gutenberg EBook of Opticks, by Isaac Newton
@@ -339,7 +332,6 @@ This eBook is for the use of anyone anywhere at no cost and with
 almost no restrictions whatsoever.  You may copy it, give it away or
 re-use it under the terms of the Project Gutenberg License included
 with this eBook or online at www.gutenberg.org
-
 
 Title: Opticks
        or, a Treatise of the Reflections, Refractions, Inflections,
@@ -385,7 +377,6 @@ $ head *.txt
 例えば、ls *.pdf` と入力すると、エラーメッセージに*.pdfというファイルはありませんと表示されます。　
 ~~~
 
-
 {: .callout}
 ~~~
 ここまで
@@ -407,7 +398,6 @@ argument:
 この場合、 `mv` または move コマンドを使って、新しい名前に **move** することができ、最初の引数に古い名前、2番目の引数に新しい名前を指定します。
 ~~~
 
-
 ~~~
 $ mv 829-0.txt gulliver.txt
 ~~~
@@ -422,7 +412,6 @@ Afterwards, when we perform a `ls` command, we will see that it is now called `g
 ~~~
 その後で、`ls`コマンドを実行すると、`gulliver.txt`という名前になっていることが確認できます。
 ~~~
-
 
 ~~~
 $ ls
@@ -494,7 +483,6 @@ mv` コマンドと同様に、`cp`コマンドは古い名前と新しい名前
 試しに `mv` コマンドを使い、`gulliver-backup.txt` というファイルを `backup` というフォルダに移動してみてください。
 ~~~
 
-
 >
 > > ## Answer
 > > ~~~
@@ -539,7 +527,6 @@ mv` コマンドと同様に、`cp`コマンドは古い名前と新しい名前
 ワイルドカード`*`は、正規表現`*`に一致します。
 ~~~
 
-
 > {: .solution}
 {: .challenge}
 
@@ -547,7 +534,6 @@ mv` コマンドと同様に、`cp`コマンドは古い名前と新しい名前
 ~~~
 hisroeryコマンドを使う
 ~~~
-
 
 > Use the `history` command to see a list of all the commands you've entered during the 
 > current session. You can also use <kbd>Ctrl</kbd> + <kbd>r</kbd> to do a reverse lookup. Hit <kbd>Ctrl</kbd> + <kbd>r</kbd>, 
@@ -623,7 +609,6 @@ $(` and `)` のように、シェルコマンドを`$(` と `)` で囲みます�
 ** echo コマンドは、実際にシェル環境でとても重要だと思いますが、なぜでしょうか？
 ~~~
 
-
 >
 > > ## Answer
 > > You may think there is not much value in such a basic command like `echo`. However, from the moment you
@@ -667,5 +652,3 @@ For that reason, please be very careful with `rm` and extremely careful with `rm
 グラフィカルユーザーインターフェースからの削除と異なり、警告はなく、ファイルを取り戻すためのごみ箱とか、その他の取り消しオプションもありません。
 ですから、`rm`の扱いには十分注意し、`rm -r`の扱いには細心の注意を払ってください。
 ~~~
-
-
