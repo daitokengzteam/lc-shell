@@ -208,8 +208,6 @@ almost no restrictions whatsoever.  You may copy it, give it away or
 re-use it under the terms of the Project Gutenberg License included
 with this eBook or online at www.gutenberg.org
 ~~~
-
-~~~
 この電子書籍は、誰でも、どこでも、無料で、何の制約もなく利用することができます。
 この電子書籍またはwww.gutenberg.orgにて、Project Gutenberg Licenseのライセンスの範囲で、コピー、譲渡、再利用ができます。
 ~~~
@@ -224,6 +222,7 @@ whereas `tail 829-0.txt` provides a perspective on the last ten lines:
 
 ~~~
 $ tail 829-0.txt
+~~~
 ~~~
 {: .bash}
 ~~~
