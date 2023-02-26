@@ -45,17 +45,11 @@ Desktop      Downloads    Movies       Pictures
 ~~~
 {: .output}
 
-We may want more information than just a list of files and directories.
-We can get this by specifying various **flags** (also known as `options`, `parameters`, or, most frequently,
-`arguments`) to go with our basic commands.
-Arguments modify the workings of the command by telling the computer what sort of output or manipulation we want.
-コマンド、オプション、パラメータ、引数、色々な引数
+ファイルやディレクトリのリストだけでなく、もっと情報が欲しいときもあります。
+それは基本的なコマンドに、さまざまな「**フラグ**」（オプション、パラメーター、あるいはよく引数（ひきすう）とも呼ばれる）を指定することで得られます。
+引数は、どのような出力や操作が必要かをコンピュータに伝えることで、コマンドの動作を変更します。
 
-If we type `ls -l` and hit enter, the computer returns a list of files that contains
-information similar to what we would find in our Finder (Mac) or Explorer (Windows):
-the size of the files in bytes, the date it was created or last modified, and the file name.
-
-
+`ls -l`と入力してEnterキーを押すと、コンピュータはFinder (Mac) や Explorer (Windows) にあるような情報を含むファイルのリストを返します。ファイルのサイズ（バイト数）や、作成日、最終更新日、ファイル名です。
 
 ~~~
 $ ls -l
@@ -74,14 +68,10 @@ drwxr-xr-x+  5 riley  staff   170 Jul 16 11:30 Public
 ~~~
 {: .output}
 
-In everyday usage we are more used to units of measurement like kilobytes, megabytes, and gigabytes.
-Luckily, there's another flag `-h` that when used with the -l option, use unit suffixes:
-Byte, Kilobyte, Megabyte, Gigabyte, Terabyte and Petabyte in order to reduce the
-number of digits to three or less using base 2 for sizes.
+日常的には、キロバイト、メガバイト、ギガバイトのような単位をよく使います。
+幸いなことに、`-h`フラグを`-l`と一緒に使用すると、バイト、キロバイト、メガバイト、ギガバイト、テラバイト、ペタバイトのような単位を付けて、サイズを 2 の累乗で表し、桁数を 3 以下にして表示します。（訳注: たとえばバイト数1564は、1.5Kと表示する）
 
-Now `ls -h` won't work on its own. When we want to combine two flags,
-we can just run them together. So, by typing `ls -lh` and hitting
-enter we receive an output in a human-readable format (note: the order here doesn't matter).
+ここでは`ls -h`を単独では使いません。2つのフラグを組み合わせたいときは、一緒に実行させることができます。つまり、`ls -lh`と入力してEnter キーを押すと、人間が読める形式の出力が得られます。(注意: ここでの順序は重要ではありません)
 
 ~~~
 $ ls -lh
@@ -100,12 +90,8 @@ drwxr-xr-x+  5 riley  staff   170B Jul 16 11:30 Public
 ~~~
 {: .output}
 
-We've now spent a great deal of time in our home directory.
-Let's go somewhere else. We can do that through the `cd` or Change Directory command:
-(Note: On Windows and Mac, by default, the case of the file/directory doesn't matter
-On Linux it does.)
-
-ここでは表示順序は考えないものとする
+私たちはホームディレクトリにかなり時間を費やしました。どこかへ移動しましょう。
+`cd`またはディレクトリの変更コマンドを使っておこないます。（注意：WindowsとMacではデフォルトでファイル名やディレクトリ名の大文字・小文字は区別しませんが、Linuxでは関係があります。
 
 ~~~
 $ cd Desktop
