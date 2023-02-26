@@ -16,13 +16,13 @@
 
 シェルを開いてみましょう。ドルマークの後にカーソルが点滅している黒い画面が開きます。
 これがコマンドラインで、`$`（ドルマーク）は**コマンドプロンプト**になります。これは、入力する準備ができていることを示します。
-
 見た目はシェルのセットアップ方法によって違うこともありますが、たいてい`$`で終わっています。
 
 シェルを操作するとき、通常あなたはどこかのフォルダ（ディレクトリ）にいます。まずどこのフォルダにいるのか、`pwd`というコマンドを使って探しましょう。
 `pwd`は"print working directory"の略で、コマンドの結果は標準出力である画面に表示されます。
 
 さっそく`pwd`と入力してEnterキーを押してみましょう。（`$`は入力せずに、その後に続くものだけを入力することに注意してください。`$`は、コマンドプロンプトに入力することを示しています）
+
 
 ~~~
 $ pwd
@@ -46,7 +46,7 @@ Desktop      Downloads    Movies       Pictures
 {: .output}
 
 ファイルやディレクトリのリストだけでなく、もっと情報が欲しいときもあります。
-それは基本的なコマンドに、さまざまな「**フラグ**」（オプション、パラメーター、あるいはよく引数（ひきすう）とも呼ばれる）を指定することで得られます。
+その場合、基本的なコマンドにさまざまな「**フラグ**」（オプション、パラメーター、あるいはよく引数（ひきすう）とも呼ばれる）を指定することで得られます。
 引数は、どのような出力や操作が必要かをコンピュータに伝えることで、コマンドの動作を変更します。
 
 `ls -l`と入力してEnterキーを押すと、コンピュータはFinder (Mac) や Explorer (Windows) にあるような情報を含むファイルのリストを返します。ファイルのサイズ（バイト数）や、作成日、最終更新日、ファイル名です。
@@ -98,8 +98,7 @@ $ cd Desktop
 ~~~
 {: .bash}
 
-Notice that the command didn't output anything. This means that it was carried
-out successfully. Let's check by using `pwd`:
+このコマンドは何も出力しないことに注意してください。これはコマンドが正常に実行されたことを意味します。`pwd`を使って確認しましょう。
 
 ~~~
 $ pwd
@@ -110,81 +109,60 @@ $ pwd
 ~~~
 {: .output}
 
-If something had gone wrong, however, the command would have told you. Let's
-test that by trying to move into a non-existent directory:
-
-何か間違った操作をしても教えてくれます。
-
-cd Desktop Windows や　
+もし何か間違っていたら、コマンドが教えてくれるはずです。存在しないディレクトリに移動することを試してみましょう。
 
 ~~~
 $ cd "things to learn about the shell"
 ~~~
 {: .bash}
 ~~~
-bash: cd: things to learn about the shell: No such file or directory
+bash: cd: things to learn about the shell: No such file or directory（そのようなファイルやディレクトリはありません）
 ~~~
 {: .output}
 
-Notice that we surrounded the name by quotation marks. The *arguments* given
-to any shell command are separated by spaces, so a way to let them know that
-we mean 'one single thing called "things to learn about the shell"', not
-'six different things', is to use (single or double) quotation marks.
+名前を引用符で囲んでいることに注意してください。任意のシェルコマンドに与えられる「引数」はスペースで区切られているため、「6つの異なるもの」ではなく、「シェルについて学ぶこと」というひとつのものだと知らせるためにシングル、もしくはダブルコーテーションを使います。
 
-We've now seen how we can go 'down' through our directory structure
-(as in into more nested directories). If we want to go back, we can type `cd ..`.
-This moves us 'up' one directory, putting us back where we started.
-**If we ever get completely lost, the command `cd` without any arguments will bring
-us right back to the home directory, the place where we started.**
+ここまでディレクトリ構造を「下に」移動する方法を見てきました（つまり、ディレクトリの中のディレクトリに移動しています）。**もし戻りたい場合は`cd ..`と入力します。するとひとつ上のディレクトリに移動し、スタート地点に戻ります。**
 
-今いるところがわからなくなったらcdで自分のホームディレクトリに戻ります。
-スペースで区切ります。6つの違ったものではないという場合はダブルクォートあるいはシングルクォートで囲みます。
+今いるところがわからなくなったら、引数なしの`cd`コマンドで自分のホームディレクトリに戻ります。
 
-ディレクトリ構造を下っていっている。ディレクトリの奥にはいっていく。ディレクトを戻りたかったら、ピリオド2つを打ちます。
-こうするとディレクトリを一つ上に移動します。
-
-> ## Previous Directoryまえに行ったディレクトリ
-> To switch back and forth between two directories use `cd -`.　cd マイナスというコマンドを使います。
+> ## 前に行ったディレクトリ
+> 2つのディレクトリを行き来するには、`cd -`を使います。
+> 
 {: .callout}
 
-> ## Try exploring
+> ## 探索してみる
 >
-> Move around the computer, get used to moving in and out of directories,
-> see how different file types appear in the Unix shell. Be sure to use the `pwd` and
-> `cd` commands, and the different flags for the `ls` command you learned so far.
-
-コンピュータの中をみてみましょう。どんな種類のファイルがUnix Shellを使ってみてみましょう。
+> コンピューターの中を動き回り、ディレクトリの中や外への移動に慣れ、
+> UNIXシェルでさまざまなファイルタイプがどのように表示されるのかを見てみます。
+> `pwd`と`cd`コマンド、これまでに学んだ`ls`コマンドの色々なフラグを必ず使用してください。
 >
-> If you run Windows,
-> also try typing `explorer .` to open Explorer for the current directory
-> (the single dot means "current directory"). If you're on a Mac,
-> try `open .` and for Linux try `xdg-open .` to open their graphical file manager.
-もしWindowsを使っている人は
-
+> もしWindowsを使っている人は、`explorer .`と入力すると、現在のディレクトリが
+> エクスプローラーで開きます（最後のピリオドは「現在のディレクトリ」を意味します）。
+> Macの場合は、`open .`、Linuxでは`xdg-open .`と入力すると、
+> グラフィカルなファイルマネージャーが開きます。
 >
 {: .challenge}
 
+ファイルシステムを操作できることは、UNIXシェルを効果的に使うために非常に重要です。慣れてくると、目的のディレクトリまで素早くたどり着くことができます。
 
-Being able to navigate the file system is very important for using the Unix shell effectively.
-As we become more comfortable, we can get very quickly to the directory that we want.
+> ## ヘルプの表示
+> 
+> `man`コマンドを使用して、シェルコマンドのマニュアルページ（ドキュメント）を呼び出します。
+> 例えば、`man ls`とすると使用可能なすべての引数を表示します。これですべてを覚えておく必要がなくなります！
+> 
+> これまでに学んだコマンドを試してみましょう。
+> マニュアルのページを移動するにはスペースキーを使います。終了するときは通常`q`を使います。
 
-すごく速くできちゃう・・・。
-
-> ## Getting help
+> ***注意：このコマンドは、MacとLinuxユーザー専用です。*** Windowsユーザーは直接使えません。
+> Windowsを使用している場合は、[http://man.he.net/](http://man.he.net/)（訳注: manの日本語訳 [https://linuxjm.osdn.jp/](https://linuxjm.osdn.jp/) ）
+> でそのシェルコマンドを検索し、関連するマニュアルページを見ることができます。一部のシステムでは、コマンドのあとに`ls --help`のように、`--help`をつけます。
 >
-> Use the `man` command to invoke the manual page (documentation) for a shell command.manコマンドでマニュアルを表示できます。
-> For example, `man ls` displays all the arguments available to you - which saves
-> you remembering them all! Try this for each command you've learned so far.調べてみましょう。
-> Use the <kbd>spacebar</kbd> to navigate the manual pages. Use <kbd>q</kbd> at any time to quit.読み進めるにはスペースキーで、qで終了します。
-
-> ***Note*: this command is for Mac and Linux users only**. It does not work directly for Windows users.
-> If you use Windows, you can search for the shell command on [http://man.he.net/](http://man.he.net/),
-> and view the associated manual page. In some systems the command name followed by `--help` will work, e.g. `ls --help`.　いくつかのコマンドでは --helpででてくる
+> また、マニュアルにはコマンドが個別にリストされています。
+> 例えば、`-h`は`-l`オプションと一緒にしか使用できませんが、マニュアルには`-lh`ではなく、`-h`として並んでいます。（訳注：日本語ヘルプ[JMプロジェクト](https://linuxjm.osdn.jp/)）
+> 
 >
-> Also, the manual lists commands individually, e.g., although `-h` can only be used together with the `-l` option,  
-> you'll find it listed as `-h` in the manual, not as `-lh`.
->
-> >## Answer　答え
+> >## 回答
 > >~~~
 > >$ man ls
 > >~~~
@@ -234,31 +212,30 @@ As we become more comfortable, we can get very quickly to the directory that we 
 {: .challenge}
 
 
-> ## Find out about advanced `ls` commands
+> ## `ls`コマンドの詳細を見る
 >
-> Find out, using the manual page, how to list the files in a
-> directory ordered by their filesize. Try it out in different directories. Can you combine it
-> with the `-l` *argument* you learned before?
+> マニュアルページを使い、ディレクトリ内のファイルをファイルサイズ順にリストする方法を見つけてください。
+> 他のディレクトリでも試してください。前に学んだ引数`-l`と組み合わせることができますか。
+> 
+> その後、最終更新日によりファイルのリストを並び替える方法を探してください。
+> 別のディレクトリにあるファイルも並べ替えてみてください。
+> 
 >
-> Afterwards,
-> find out how you can order a list of files based on their last modification date.
-> Try ordering files in different directories.
->
-> > ## Answer
+> > ## 回答
 > >
-> > To order files in a directory by their filesize, in combination with the `-l` argument:
+> > 引数`-l`と組み合わせて、ディレクトリの中のファイルサイズ順にファイルを並び替えます。:
 > >
 > > ~~~
-> > ls -lS 答えはS
+> > ls -lS
 > > ~~~
 > > {: .bash}
 > >
-> > Note that the `S` is **case-sensitive!**
+> > `S`は**大文字・小文字を区別する**ことに注意してください。
 > >
-> > To order files in a directory by their last modification date, in combination with the `-l` argument:
+> > 引数`-l`と組み合わせて、ディレクトリ内のファイルを最終更新順に並べます。:
 > >
 > > ~~~
-> > ls -lt　答えはt
+> > ls -lt
 > > ~~~
 > > {: .bash}
 > {: .solution}
