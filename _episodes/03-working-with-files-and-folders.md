@@ -45,11 +45,13 @@ $ cd
 $ cd Desktop/shell-lesson
 $ pwd
 ~~~
+
+~~~
 {: .bash}
-~~~
+
 /Users/riley/Desktop/shell-lesson
-~~~
 {: .output}
+~~~
 
 ここでは、新しいディレクトリを作成し、そこに移動します。
 
