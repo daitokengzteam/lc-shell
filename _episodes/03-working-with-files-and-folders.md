@@ -2,7 +2,7 @@
 title: "ファイルやディレクトリを操作する " 
 teaching: 20
 exercises: 10
-question:
+questions:
 - "ファイルやディレクトリをコピー、移動、削除するにはどうすればいいのですか？"
 - "ファイルを読むにはどうすればいいのですか？"
 objectives:
