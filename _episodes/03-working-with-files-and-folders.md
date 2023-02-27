@@ -135,6 +135,7 @@ with this eBook or online at www.gutenberg.org
 $ tail 829-0.txt
 ~~~
 {: .bash}
+~~~
 Most people start at our Web site which has the main PG search facility:
 
     http://www.gutenberg.org
