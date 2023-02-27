@@ -29,12 +29,10 @@ $ ls
 ~~~
 
 {: .bash}
-
 ~~~
 Applications Documents    Library      Music        Public
 Desktop      Downloads    Movies       Pictures
 ~~~
-
 {: .output}
 
 ファイルと対話するためのいくつかの基本的な方法を試します。
