@@ -112,18 +112,18 @@ drwxr-xr-x 1 riley staff  64B Feb 22 2017  firstdir
 
 ~~~
 $ cat 829-0.txt
-~~~
 {: .bash}
-
+~~~
 ターミナル画面が開き、本の内容全体が一度に流れ（ターミナルに表示されます）、新しいプロンプトが表示された後、このプロンプトの上に本の最後の数行が表示されます。
 
 ファイルの最初や最後のところをざっと見て、そのファイルの内容を把握したいことはよくあります。
 そのためにUnix シェルは `head` と `tail` というコマンドを用意しています。
 
+~~~
 $ head 829-0.txt
 ~~~
 {: .bash}
-~~~
+
 The Project Gutenberg eBook, Gulliver's Travels, by Jonathan Swift
 この電子書籍は、誰でも、どこでも、無料で、何の制約もなく利用することができます。
 この電子書籍またはwww.gutenberg.orgにて、Project Gutenberg Licenseのライセンスの範囲で、コピー、譲渡、再利用ができます。
@@ -135,9 +135,7 @@ The Project Gutenberg eBook, Gulliver's Travels, by Jonathan Swift
 ~~~
 $ tail 829-0.txt
 ~~~
-~~~
 {: .bash}
-~~~
 
 多くの人は、まずProject Gutenbergのウェブサイトの検索機能から始めます。
 
@@ -145,13 +143,11 @@ $ tail 829-0.txt
 
 このウェブサイトには、Project Gutenberg-tm.に関する情報があり、そこには、Project Gutenberg Literary Foundationへの寄付方法、新しい電子書籍の制作を支援する方法、新しい電子書籍の情報を得るためのメールマガジンの購読方法が含まれています。
 
-~~~
 {: .output}
 
 10行では足りない (あるいは多すぎる) 場合は、 `man head` (あるいは Windows では `head --help`) をチェックしてください。
 表示する行数を指定するオプションがあるかどうかを確認します。
 (表示する行数を特定するオプションはあります: `head -n 20` は20行を表示します)。
-~~~
 
 ファイルを操作する別の方法は、一度に画面ずつ表示することです。
 最初の画面を見るには `less 829-0.txt` と入力して、’スペースキー’で次の画面が見られます。 
