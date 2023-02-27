@@ -45,8 +45,8 @@ $ pwd
 {: .bash}
 ~~~
 /Users/riley/Desktop/shell-lesson
-{: .output}
 ~~~
+{: .output}
 
 ここでは、新しいディレクトリを作成し、そこに移動します。
 
