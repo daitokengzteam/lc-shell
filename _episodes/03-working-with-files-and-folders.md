@@ -27,11 +27,14 @@
 ~~~
 $ ls
 ~~~
+
 {: .bash}
+
 ~~~
 Applications Documents    Library      Music        Public
 Desktop      Downloads    Movies       Pictures
 ~~~
+
 {: .output}
 
 ファイルと対話するためのいくつかの基本的な方法を試します。
@@ -77,9 +80,7 @@ $ cd ..
 > 今日一日この方法を使い、動作を確認することをお勧めします（時間と労力が大幅に節約されます！）。
 
 {: .callout}
-~~~
 
-~~~
 ### ファイルを読む
 
 `firstdir` にいる場合は、`cd ..` を使い、 `shell-lesson`の ディレクトリに戻ります。
