@@ -27,7 +27,6 @@ keypoints:
 ~~~
 $ ls
 ~~~
-
 {: .bash}
 ~~~
 Applications Documents    Library      Music        Public
@@ -43,10 +42,8 @@ $ cd
 $ cd Desktop/shell-lesson
 $ pwd
 ~~~
-
-~~~
 {: .bash}
-
+~~~
 /Users/riley/Desktop/shell-lesson
 {: .output}
 ~~~
@@ -78,7 +75,6 @@ $ cd ..
 > 2つまたはそれ以上のファイルで同じ文字がある場合、自動補完機能は最初の相違点までしか入力しません。
 > その後に文字を追加し、再度Tabキーを使用して補完を試すことができます。
 > 今日一日この方法を使い、動作を確認することをお勧めします（時間と労力が大幅に節約されます！）。
-
 {: .callout}
 
 ### ファイルを読む
@@ -110,8 +106,9 @@ drwxr-xr-x 1 riley staff  64B Feb 22 2017  firstdir
 
 ~~~
 $ cat 829-0.txt
-{: .bash}
 ~~~
+{: .bash}
+
 ターミナル画面が開き、本の内容全体が一度に流れ（ターミナルに表示されます）、新しいプロンプトが表示された後、このプロンプトの上に本の最後の数行が表示されます。
 
 ファイルの最初や最後のところをざっと見て、そのファイルの内容を把握したいことはよくあります。
@@ -121,11 +118,15 @@ $ cat 829-0.txt
 $ head 829-0.txt
 ~~~
 {: .bash}
-
+~~~
 The Project Gutenberg eBook, Gulliver's Travels, by Jonathan Swift
-この電子書籍は、誰でも、どこでも、無料で、何の制約もなく利用することができます。
-この電子書籍またはwww.gutenberg.orgにて、Project Gutenberg Licenseのライセンスの範囲で、コピー、譲渡、再利用ができます。
 
+
+This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever.  You may copy it, give it away or
+re-use it under the terms of the Project Gutenberg License included
+with this eBook or online at www.gutenberg.org
+~~~
 {: .output}
 
 これは、最初の10行を表示するもので、`tail 829-0.txt`は、最後の10行を提示します。
@@ -135,12 +136,15 @@ $ tail 829-0.txt
 ~~~
 {: .bash}
 
-多くの人は、まずProject Gutenbergのウェブサイトの検索機能から始めます。
+Most people start at our Web site which has the main PG search facility:
 
     http://www.gutenberg.org
 
-このウェブサイトには、Project Gutenberg-tm.に関する情報があり、そこには、Project Gutenberg Literary Foundationへの寄付方法、新しい電子書籍の制作を支援する方法、新しい電子書籍の情報を得るためのメールマガジンの購読方法が含まれています。
-
+This Web site includes information about Project Gutenberg-tm,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.
+~~~
 {: .output}
 
 10行では足りない (あるいは多すぎる) 場合は、 `man head` (あるいは Windows では `head --help`) をチェックしてください。
@@ -165,7 +169,6 @@ $ less 829-0.txt
 > 空白のコマンドプロンプトにて、上矢印キーを押すと、カーソルの前に前回入力したコマンドが表示されることがわかります。
 > 上矢印キーを押し続けると、前のコマンドを順次表示させることができます。
 > 下矢印キーを押すと、最新のコマンドに戻ります。これも重要な省力化機能で、これから頻繁に使います。
-
 {: .callout}
 
 上矢印を押し、`head 829-0.txt` コマンドを表示させます。
@@ -258,8 +261,8 @@ $ ls
 > {: .solution}
 {: .challenge}
 
-> ディレクトリ名変更
-
+> ## ディレクトリ名変更
+>
 > ディレクトリ名の変更処理は、ファイル名の変更と同じ方法になります。
 > 試しに `mv` コマンドを使い、`firstdir`というディレクトリを `backup` に変更してみてください。
 
@@ -275,7 +278,6 @@ $ ls
 
 > `mv` コマンドに付ける最後の引数がファイルではなくディレクトリの場合、最初の引数で与えられたファイルはそのディレクトリに移動されます。
 > 試しに `mv` コマンドを使い、`gulliver-backup.txt` というファイルを `backup` というフォルダに移動してみてください。
-
 >
 > > ## Answer
 > > ~~~
@@ -293,24 +295,18 @@ $ ls
 {: .challenge}
 
 > ## ワイルドカードと正規表現
-
+>
 > `?`というワイルドカードは、一文字に一致します。`*`というワイルドカードは、ゼロもしくは複数の文字に一致します。
 > もし正規表現のレッスンに参加されていたなら、正規表現をどのように表現するか覚えていますか？　
 > （正規表現は、シェルの機能ではありませんが、一部のコマンドではサポートしています。これについてはまた後で)
-
+>
 > > ## Answer
 > > ワイルドカード`?`は、正規表現`.`（ピリオド）に一致します。
-
 > > ワイルドカード`*`は、正規表現`*`に一致します。
-~~~
-
-~~~
-
 > {: .solution}
 {: .challenge}
 
 > ## hisroeryコマンドを使う
-
 > hisotoryコマンドを使うことで、最新のセッションで入力したコマンドのリストを見ることができます。
 > また、 `Ctrl + r`は逆引きにも使えます。`Ctrl + r`を押してから、探しているコマンドの一部を入力します。過去のコマンドも補完してくれます。
 > ` Enter` を押してコマンドを再度実行するか、矢印キーを押してコマンドを編集します。
@@ -320,8 +316,6 @@ $ ls
 > これによりすべての履歴を `history.txt` というテキストファイルに出力し、後で編集できます。
 > 履歴からコマンドを呼び出すには、`history`と入力します。コマンド番号、例えば2045をメモしてください。
 > コマンドを呼び出すには、`!2045`と入力します。これでコマンドが実行されます。
-
-> 
 {: .challenge}
 
 > ## `echo`コマンドの使用
@@ -329,7 +323,7 @@ $ ls
 > `echo` コマンドは、単に指定したテキストを出力するだけです。試してみてください。
 > `echo ‘ライブラリカーペントリーはすごい！
 > 面白いでしょう？
-
+> 
 > 変数を指定することもできます。
 > 最初に、`NAME=` と入力し、その後で自分の名前を入力し、Enterキーを押します。
 > 次に、`echo "$NAME ライブラリカーペントリーはすごい！"`と入力し、Enterキーを押します。すると、どうなりますか？
@@ -338,22 +332,17 @@ $ ls
 > $(` and `)` のように、シェルコマンドを`$(` と `)` で囲みます。
 > では、次のように試してみてください。
 > > `echo $(date) はよい天気になりました`.
-
 > `date`コマンドの出力は、指定したテキストと一緒に表示されることに注意してください。
 > これまでに学んだ他のコマンドで、同じように試してみてください。
-
 > echo コマンドは、実際にシェル環境でとても重要だと思いますが、なぜでしょうか？
-
 >
 > > ## Answer
 > > echo` のような基本的なコマンドは、あまり価値がないと思うかもしれません。
 > > しかし、自動化されたシェルスクリプトを書き始めた瞬間から、このコマンドは非常に便利なものになります。
 > > 例えば、スクリプトの現在の状態など、画面にテキストを出力する必要があることがよくあります。　
-
 > >
 > > さらに、最初にシェル変数を使い情報を一時的に保存し、後で再利用することができます。
 > > 自動化スクリプトを書き始めると、その機会が多くなるでしょう。
-
 > {: .solution}
 {: .challenge}
 
