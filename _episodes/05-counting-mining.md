@@ -252,43 +252,21 @@ $ wc -l *.tsv | sort -n | head -n 1
 
 ![Redirects and Pipes](../fig/redirects-and-pipes.png)
 
-> ## Pipes and Filters
-> This simple idea is why Unix has been so successful. Instead of creating enormous
-> programs that try to do many different things, Unix programmers focus on creating
-> lots of simple tools that each do one job well, and that work well with each other.
-> This programming model is called “pipes and filters”. We’ve already seen pipes; a
-> filter is a program like `wc` or `sort` that transforms a stream of input into a
-> stream of output. Almost all of the standard Unix tools can work this way: unless
-> told to do otherwise, they read from standard input, do something with what they’ve
-> read, and write to standard output.
->
-> The key is that any program that reads lines of text from standard input and writes
-> lines of text to standard output can be combined with every other program that
-> behaves this way as well. You can and should write your programs this way so that
-> you and other people can put those programs into pipes to multiply their power.
+> ## パイプとフィルター
+> このシンプルなアイデアこそが、Unix がこれほどまでに成功した理由です。 
+> Unix プログラマーは、多くの異なることをしようとする巨大なプログラムを作成する代わりに、
+> それぞれが 1 つの仕事をうまくこなし、互いにうまく連携する単純なツールをたくさん作成することに重点を置いています。
+> このプログラミング モデルは「パイプとフィルター」と呼ばれます。パイプはすでに見ました。フィルターは、入力を出力
+> に変換する `wc` や `sort` のようなプログラムです。ほとんどすべての標準的な Unix ツールは、このように動作します。
+> 特に指示がない限り、標準入力から読み取り、読み取った内容に対して何らかの処理を行い、標準出力に書き込みます。
 {: .callout}
 <!-- Copied from https://swcarpentry.github.io/shell-novice/04-pipefilter/ -->
-理解するのに少し時間がかかるかもしれません。ただ、強力なコマンドです。
-だいなり記号がつくとファイルが出力される。
-いろんな形で切り分けられる
-パイプとフィルター
-入力の流れを出力の流れに変換するプログラム
-ほとんどの標準のUNIXツールはこのように動きます。
-特に指定がない限りフィルターもツールは標準入力からデータを読み込んで
-読み込んだデータを標準出力に出力します。
-ここでの鍵はこの標準入力からテキストを読み込んで、標準出力に結果を書き出すプログラム
-他のどのプログラムとも組み合わせることができる
-あなたがプログラムを書くときには
-さらに有効活用できるようになりますし、そういうプログラムを書くべきです。
-パイプでつなげるようにプログラムを書きましょう。
-画面にでてくるように作りましょう。
-> ## Adding another pipe
-> We have our `wc -l *.tsv | sort -n | head -n 1` pipeline. What would happen
-> if you piped this into `cat`? Try it!
+> ## パイプの追加
+> 私たちは `wc -l *.tsv | sort -n | head -n 1` というパイプを持っています。
+> このパイプを `cat` につないだらどうなるでしょうか？試してみてください。
 >
 > > ## Solution
-> > The `cat` command just outputs whatever it gets as input, so you get exactly
-> > the same output from
+> > ’cat`コマンドは、入力されたものをそのまま出力するので、次のように全く同じ出力が得られます。
 > >
 > > ~~~
 > > $ wc -l *.tsv | sort -n | head -n 1
