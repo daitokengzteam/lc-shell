@@ -21,32 +21,26 @@ keypoints:
 - "コマンドとフラグを組み合わせて、作業のために特別で複雑なクエリを作成できる"
 
 ---
-##  Counting and mining data
+##  データの集計とマイニング
 
-Now that you know how to navigate the shell, we will move onto
-learning how to count and mine data using a few of the standard shell commands.
-While these commands are unlikely to revolutionise your work by themselves,
-they're very versatile and will add to your foundation for working in the shell
-and for learning to code. The commands also replicate the sorts of uses library users might make of library data.シェルの操作方法を皆様覚えたのでシェルコマンドを数えたり集計、発見したりする方法を学んでいきましょう。これらのコマンドでは単体では革命が起きたりすることはなさそうですが、シェルで操作をしたり、習得とかコードの勉強とかにすごくいろんな用途に使います。これらのコマンドは図書館、はい。図書館からデータを公開するときにユーザーが操作できたりするようになる。
+シェルの操作方法がわかったところで、次は標準的なシェルコマンドを使ったデータの数え方、調べ方を学びます。
+これらのコマンドは、それだけであなたの仕事に革命を起こすことはありませんが、非常に汎用性があり、シェルで作業するための基礎となります。
+これらのコマンドは非常に汎用性が高く、シェルで作業するための、そしてコードを学ぶための基礎となるものです。
+また、これらのコマンドは、図書館の利用者が図書館のデータを使用する場合の具体例を再現しています。
 
-## Counting and sorting
+## 数え方、並べ方
 
-We will begin by counting the contents of files using the Unix shell.
-We can use the Unix shell to quickly generate counts from across files,
-something that is tricky to achieve using the graphical user interfaces of standard office suites.シェルを使ってファイルのコンテントを数える方法から始めます。
+シェルを使ってファイルの中身を数えることから始めます。
+シェルを使用すると、ファイル全体から迅速にカウントすることができます。
+標準的なオフィススイートのグラフィカルユーザーインターフェースを使用して実現するのは難しいことです。
 
-Let's start by navigating to the directory that contains our data using the
-`cd` command:
-ファイルを使って簡単に数を数えることができます。
-そのファイルの数を数えるというのがオフィスのGUDを使うとUNIXシェルを使うと簡単にできます。データを含んでいるシェルに移動しましょう。
+cdコマンドを使用してデータが格納されているシェルに移動しましょう。
 ~~~
 $ cd shell-lesson
 ~~~
 {: .bash}
 
-Remember, if at any time you are not sure where you are in your directory structure,
-use the `pwd` command to find out:
-もしどこにいっているかわからない場合はpwdを押してください。
+もしどこにいるのかわからない場合はpwdコマンドを使ってください。
 ~~~
 $ pwd
 ~~~
@@ -56,9 +50,7 @@ $ pwd
 ~~~
 {: .output}
 
-And let's just check what files are in the directory and how large they
-are with `ls -lhS`:
-ls -lhSを押すとファイルのサイズをみることができます。
+ディレクトリにどのようなファイルがあり、どのくらいの容量があるのか、`ls -lhS`で確認してみましょう。
 ~~~
 $ ls -lhS
 ~~~
@@ -75,29 +67,23 @@ drwxr-xr-x 2 riley staff   68 Feb  2 00:58 backup
 ~~~
 {: .output}
 
-In this episode we'll focus on the dataset `2014-01_JA.tsv`, that contains
-journal article metadata, and the three `.tsv` files derived from the original
-dataset. Each of these three `.tsv` files includes all data where a keyword such
-as `africa` or `america` appears in the 'Title' field of `2014-01_JA.tsv`.
-論文のメタデータが入っている。オリジナルデータセットここから派生している
-これらのTSVファイル、アフリカ、アメリカとか入っているのがこれ。切り出し済み
-> ## CSV and TSV Files
-> CSV (Comma-separated values) is a common plain text format for storing tabular
-> data, where each record occupies one line and the values are separated by commas.
+このエピソードでは、データセット `2014-01_JA.tsv` に焦点を当てます。
+論文のメタデータ、およびオリジナルから派生した 3 つの `.tsv` ファイル
+データセットです。これら3つの`.tsv`ファイルには、`2014-01_JA.tsv`の
+「Title」フィールドに`africa`や`america`などのキーワードが出現するデータがすべて含まれています。
+
+> ## CSVとTSVファイル
+> CSV（Comma-separated values）は、表形式のデータを保存するための一般的なプレーン
+> テキスト形式で、各レコードが1行を占め、値はカンマで区切られています。
 > TSV (Tab-separated values) is just the same except that values are separated by
-> tabs rather than commas. Confusingly, CSV is sometimes used to refer to both CSV,
-> TSV and variations of them. The simplicity of the formats make them great for
-> exchange and archival. They are not bound to a specific program (unlike Excel
-> files, say, there is no `CSV` program, just lots and lots of programs that
-> support the format, including Excel by the way.), and you wouldn't have any
-> problems opening a 40 year old file today if you came across one.
+> TSV (Tab-separated values) は、値がカンマではなくタブで区切られていることを除けば、
+> 同じものです。紛らわしいことに、CSVはCSVとTSVの両方、およびそれらのバリエーション
+> を指す言葉として使われることもあります。これらの形式は単純であるため、交換や
+> アーカイブに適しています。特定のプログラムに縛られることもなく（例えばExcelファイル
+> と違って、CSVというプログラムはなく、Excelを含む多くのプログラムがこの形式をサポート
+> しています）、40年前のファイルを今開いても何の問題もありません。
 {: .callout}
-各レコードは一行、値がカンマで区切られています。これはカンマではなくタブで区切られている。
-CSVという言葉はCSVとかTSVのフォーマットを総称して呼ぶことがあります。単純なのでデータの交換とか
-アーカイブにとても役立ちます。
-特定のプログラムにしばられません。CSVという名前のプログラムはありません。
-CSVをサポートするプログラムもたくさんあります。なので40年前にできたファイルを使うのもなんの問題もありません。
-<!-- hm, reminds me of MARC -->
+<!-- ふむ、MARCを思い出す。 -->
 
 First, let's have a look at the largest data file, using the tools we learned in
 一番
