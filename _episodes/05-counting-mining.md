@@ -187,9 +187,9 @@ $ cat lengths.txt
 ~~~
 {: .bash}
 
-Next, there is the `sort` command. We'll use the `-n` flag to specify that we
-want numerical sorting, not lexical sorting, we output the results into
-yet another file, and we use `cat` to check the results:
+次に「sort」コマンドです。 `-n` フラグを使用して、
+辞書順ではなく数値順を指定し、結果を別のファイルに出力し、`cat`で
+その結果を確認します。
 
 ~~~~
 $ sort -n lengths.txt > sorted-lengths.txt
@@ -205,8 +205,7 @@ $ cat sorted-lengths.txt
 ~~~
 {: .output}
 
-Finally we have our old friend `head`, that we can use to get the first line
-of the `sorted-lengths.txt`:
+最後に、古い友人である `head` を使って、 `sorted-lengths.txt` の最初の行を取得します。
 
 ~~~~
 $ head -n 1 sorted-lengths.txt
@@ -217,13 +216,12 @@ $ head -n 1 sorted-lengths.txt
 ~~~
 {: .output}
 
-But we're really just interested in the end result, not the intermediate
-results now stored in `lengths.txt` and `sorted-lengths.txt`. What if we could
-send the results from the first command (`wc -l *.tsv`) directly to the next
-command (`sort -n`) and then the output from that command to `head -n 1`?
-Luckily we can, using a concept called pipes. On the command line, you make a
-pipe with the vertical bar character `|`. Let's try with one pipe first:
-ここでは一番短いファイル
+しかし、私たちが本当に興味があるのは最終結果だけで、`lengths.txt`と`sorted-lengths.txt`に
+保存されている中間結果には興味がありません。もし、次のようなことができたらどうでしょう。
+最初のコマンド`(wc -l *.tsv)`の出力を次のコマンド(`sort -n`)に引き渡すことができたらどうでしょう。
+幸いなことに、パイプという概念を使えば可能です。コマンドライン上では縦棒の文字でパイプを作ります。
+まずは一つのパイプで試してみましょう。
+
 ~~~~
 $ wc -l *.tsv | sort -n
 ~~~~
@@ -237,10 +235,9 @@ $ wc -l *.tsv | sort -n
 ~~~
 {: .output}
 
-Notice that this is exactly the same output that ended up in our `sorted-lengths.txt`
-earlier. Let's add another pipe:
 行数が短いファイルをみつける簡単なパイプラインを作ってみましょう。
--lオプションを使います。tsvファイルの行数がでてきました。wcコマンド自体は出力をsortする機能はありません。
+-lフラグを使います。tsvファイルの行数がでてきました。wcコマンド自体は出力をsortする機能はありません。
+
 ~~~~
 $ wc -l *.tsv | sort -n | head -n 1
 ~~~~
@@ -250,19 +247,8 @@ $ wc -l *.tsv | sort -n | head -n 1
 ~~~
 {: .output}
 
-It can take some time to fully grasp pipes and use them efficiently, but it's a
-very powerful concept that you will find not only in the shell, but also in most
-programming languages.
-
-3つのシェルコマンドと使って実行できます。
-出力をリダイレクトします。
-リダイレクトをだいなり記号を使います。
-この記号を使ってリダイレクトします。
-何も出力されません。
-実際のcatとかlessとか
-確認してみましょう。
-中身がでてきました。
-sortして文字順にすることができます。
+パイプを完全に把握して効率的に使用するには時間がかかる場合がありますが、
+これはシェルだけでなく、ほとんどのプログラミング言語にも見られる非常に強力な概念です。
 
 ![Redirects and Pipes](../fig/redirects-and-pipes.png)
 
