@@ -1,5 +1,5 @@
 ---
-title: "Automating the tedious with loops"
+title: "ループで面倒なことを自動化する" 
 teaching: 20
 exercises: 10
 questions:
