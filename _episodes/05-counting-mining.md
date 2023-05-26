@@ -85,8 +85,7 @@ drwxr-xr-x 2 riley staff   68 Feb  2 00:58 backup
 {: .callout}
 <!-- ふむ、MARCを思い出す。 -->
 
-First, let's have a look at the largest data file, using the tools we learned in
-一番
+まず、学習したツールを使用して、最大のデータファイルを見てみましょう。
 [Reading files]({{ page.root }}/03-working-with-files-and-folders/#reading-files):
 
 ~~~
@@ -94,14 +93,10 @@ $ cat 2014-01_JA.tsv
 ~~~
 {: .bash}
 
-Like `829-0.txt` before, the whole dataset cascades by and can't really make any
-sense of that amount of text. To cancel this on-going con`cat`enation, or indeed any
-process in the Unix shell, press <kbd>Ctrl</kbd>+<kbd>C</kbd>.
-データセット自体が全部表示されます。役に立ちません。シェルの作業を途中で止めるには
-大抵のデータは最初の何行かをみると簡単なデータが書いてある。
+データセット自体が全部表示され、役に立ちません。この進行中のcatコマンドをキャンセル
+（あるいはUnixシェルのプロセスをキャンセル）するには、CtlキーとCのキーを押してください。
 
-In most data files a quick glimpse of the first few lines already tells us a lot
-about the structure of the dataset, for example the table/column headers:
+ほとんどのデータファイルでは、最初の数行を見ただけで、すでに多くのことがわかります。例えば、テーブルやカラムのヘッダーなどです。
 
 ~~~
 $ head -n 3 2014-01_JA.tsv
@@ -112,22 +107,15 @@ File    Creator    Issue    Volume    Journal    ISSN    ID    Citation    Title
 History_1a-rdf.tsv  Doolittle, W. E.  1 59  KIVA -ARIZONA-  0023-1940 (Uk)RN001571862 KIVA -ARIZONA- 59(1), 7-26. (1993)  A Method for Distinguishing between Prehistoric and Recent Water and Soil Control Features  xxu eng ARIZONA ARCHAEOLOGICAL AND HISTORICAL SOCIETY 1993
 History_1a-rdf.tsv  Nelson, M. C. 1 59  KIVA -ARIZONA-  0023-1940 (Uk)RN001571874 KIVA -ARIZONA- 59(1), 27-48. (1993) Classic Mimbres Land Use in the Eastern Mimbres Region, Southwestern New Mexico xxu eng ARIZONA ARCHAEOLOGICAL AND HISTORICAL SOCIETY 1993
 
-最初の三行をみてみます。こんな感じ。ヘッダの行にはメタデータの項目が入っています。じゃあ簡単なデータ分析
 ~~~
 {: .output}
 
-In the header, we can see the common metadata fields of academic papers: `Creator`, `Issue`, `Citation`, etc.
+ヘッダーで学術文献の一般的なメタデータフィールドを見ることができます。’Creator（著者）`、`Issue（巻号）`、`Citation（出典）`などです。
 
-Next, let's learn about a basic data analysis tool:
-`wc` is the "word count" command: it counts the number of lines, words, and bytes.
-Since we love the wildcard operator, let's run the command
-`wc *.tsv` to get counts for all the `.tsv` files in the current directory
-(it takes a little time to complete):
-WCはデータカウントコマンド、私たちはワイルドカードコマンドが大好きなので全部のTSVファイルの数を数えてみましょう。
-ちょっと時間がかかります。
-ちょっとやってみましょう。行の数、単語の数、ファイル数、ファイルがちょっとしかない場合はテキストエディタを使ったほうが良い
-100個とかあったら、コマンドを使ったほうがよい、コマンドを駆使しして、自動化できるちょっとずつやっていきます。
-とりあえずは簡単なパイプライン
+次に、基本的なデータ解析ツールについて学びましょう。
+"wc" は "word" をカウントするコマンドで、行数、単語数、バイト数を数えます。
+私たちはワイルドカード演算子が好きなので、次のコマンドを実行してみましょう。
+"wc *.tsv" というコマンドを実行して、カレントディレクトリにあるすべての ".tsv" ファイルの中身の様々な数を数えてみましょう。ちょっと時間がかかります。
 
 ~~~~
 $ wc *.tsv
