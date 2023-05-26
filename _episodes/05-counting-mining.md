@@ -1,24 +1,24 @@
 ---
-title: "Counting and mining with the shell"
+title: "シェルを使用した集計とマイニング"
 teaching: 60
 exercises: 30
 questions:
-- "How can I count data?"
-- "How can I find data within files?"
-- "How can I combine existing commands to do new things?"
+- "データをカウントする"
+- "ファイル内のデータを探す"
+- "コマンドを組み合わせて新しいことを行う"
 objectives:
-- "Demonstrate counting lines, words, and characters with the shell command wc and appropriate flags"
-- "Use strings to mine files and extract matched lines with the shell"
-- "Create complex single line commands by combining shell commands and regular expressions to mine files"
-- "Redirect a command's output to a file."
-- "Process a file instead of keyboard input using redirection."
-- "Construct command pipelines with two or more stages."
-- "Explain Unix's 'small pieces, loosely joined' philosophy."
+- "シェル コマンド wc と適切なフラグを使用して、行、単語、および文字を数えるデモを行う"
+- "シェルを使用して文字列でファイルを検索し、一致する行を抽出する"
+- "シェル コマンドと正規表現を組み合わせてファイルを探索することにより、複雑なコマンドを作成する"
+- "コマンドの出力をファイルにリダイレクトする"
+- "リダイレクトを使用して、キーボード入力の代わりにファイルを処理する"
+- "2つ以上の場面でコマンド パイプラインを構築する"
+- "Unixの哲学「一つの大きなシステムを、独立した小さなソフトウェアの集まりとして作るという考え方」を説明する"
 keypoints:
-- "The shell can be used to count elements of documents"
-- "The shell can be used to search for patterns within files"
-- "Commands can be used to count and mine any number of files"
-- "Commands and flags can be combined to build complex queries specific to your work"
+- "シェルを使用してドキュメントの要素を集計ができる"
+- "シェルを使用して、ファイル内のパターンを検索ができる"
+- "コマンドを使用して、任意の数のファイルを集計および探索ができる"
+- "コマンドとフラグを組み合わせて、作業のために特別で複雑なクエリを作成できる"
 
 ---
 ##  Counting and mining data
