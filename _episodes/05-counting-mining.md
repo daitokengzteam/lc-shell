@@ -35,12 +35,14 @@ keypoints:
 標準的なオフィススイートのグラフィカルユーザーインターフェースを使用して実現するのは難しいことです。
 
 cdコマンドを使用してデータが格納されているシェルに移動しましょう。
+
 ~~~
 $ cd shell-lesson
 ~~~
 {: .bash}
 
 もしどこにいるのかわからない場合はpwdコマンドを使ってください。
+
 ~~~
 $ pwd
 ~~~
@@ -51,6 +53,7 @@ $ pwd
 {: .output}
 
 ディレクトリにどのようなファイルがあり、どのくらいの容量があるのか、`ls -lhS`で確認してみましょう。
+
 ~~~
 $ ls -lhS
 ~~~
@@ -130,17 +133,17 @@ $ wc *.tsv
 ~~~
 {: .output}
 
-The first three columns contains the number of lines, words and bytes.
+最初の3列は、行数、ワード数、バイト数です。
 
-If we only have a handful of files to compare, it might be faster or more convenient
-to just check with Microsoft Excel, OpenRefine or your favourite text editor, but
-when we have tens, hundreds or thousands of documents, the Unix shell has a clear
-speed advantage. The real power of the shell comes from being able to combine commands
-and automate tasks, though. We will touch upon this slightly.
+比較するファイルが数個しかない場合は、Microsoft ExcelやOpenRefine、
+あるいはお気に入りのテキストエディタで確認する方が早いし便利かもしれません。
+しかし、数十、数百、数千の文書がある場合、Unixシェルの方が明らかに速度的に有利です。
+シェルの本当の威力は、コマンドを組み合わせて、作業を自動化できることです。
+このことについて、少し触れておきます。
 
-For now, we'll see how we can build a simple pipeline to find the shortest file
-in terms of number of lines. We start by adding the `-l` flag to get only the
-number of lines, not the number of words and bytes:
+Fとりあえず、行数の点で最短のファイルを見つける簡単なパイプラインを構築する方法を見てみましょう。
+まず、`-l`フラグを追加して、行数だけ取得するようにします。
+フラグを追加して、ワード数やバイト数ではなく行数だけを取得します。
 
 ~~~~
 $ wc -l *.tsv
@@ -155,21 +158,21 @@ $ wc -l *.tsv
 ~~~
 {: .output}
 
-The `wc` command itself doesn't have a flag to sort the output, but as we'll
-see, we can combine three different shell commands to get what we want.
+`wc` コマンド自体には出力をソートするフラグがありませんが、これから見るように
+3つの異なるシェルコマンドを組み合わせて、欲しいものを手に入れることができます。
 
-First, we have the `wc -l *.tsv` command. We will save the output from this
-command in a new file. To do that, we *redirect* the output from the command
-to a file using the ‘greater than’ sign (>), like so:
+まず、`wc -l *.tsv`コマンドがあります。
+コマンドの出力を新しいファイルに保存します。
+そのためには、コマンドの出力を大なり記号を使って、次のようにファイルにリダイレクトします。
 
 ~~~
 $ wc -l *.tsv > lengths.txt
 ~~~
 {: .bash}
 
-There's no output now since the output went into the file `lengths.txt`, but
-we can check that the output indeed ended up in the file using `cat` or `less`
-(or Notepad or any text editor).
+出力は `lengths.txt` というファイルに入ってしまったので、今は何も出力されていません。
+しかし、`cat` や `less` を使って(またはメモ帳などのテキストエディタで) 、
+出力が本当にファイルに収まったかどうかを確認することができます。
 
 ~~~~
 $ cat lengths.txt
