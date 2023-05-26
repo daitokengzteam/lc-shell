@@ -3,14 +3,14 @@ title: "Automating the tedious with loops"
 teaching: 20
 exercises: 10
 questions:
-- "What is a loop?""ループとはなにか"
-- "How can a loop be used to repeat a task?"”繰り返しの仕事をするのにどのようにループを使うか。”
+- "ループとはなにか"
+- "繰り返しの仕事をするのにどのようにループを使うか。”
 objectives:
-- "Describe how loops can be used to repeat tasks""ループを使って複数のファイルを繰り返しリネームできるようになる。"
+- "ループを使って複数のファイルを繰り返しリネームできるようになる。"
 - "Implement a loop to rename several files"
 keypoints:
-- "Looping is the foundation for working smarter with the command line""ループは生産性向上の鍵"
-- "Loops help us to do the same (or similar) things to a bunch of items""なぜならこれは繰り返し実行することでワイルドカードやタブ補完とどうようにタイピングの量と間違いを避けることができる"
+- "ループは生産性向上の鍵"
+- "なぜならこれは繰り返し実行することでワイルドカードやタブ補完とどうようにタイピングの量と間違いを避けることができる"
 ---
 ### Writing a Loop ループを書く
 
