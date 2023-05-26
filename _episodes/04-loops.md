@@ -12,6 +12,7 @@ keypoints:
 - "ループは生産性向上の鍵"
 - "なぜならこれは繰り返し実行することでワイルドカードやタブ補完とどうようにタイピングの量と間違いを避けることができる"
 ---
+
 ### Writing a Loop ループを書く
 
 **Loops** are key to productivity improvements through automation as they allow us to execute
