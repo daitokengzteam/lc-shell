@@ -308,10 +308,10 @@ $ wc -l *.tsv | sort -n | head -n 1
 > {: .solution}
 {: .challenge}
 
-> ## Counting number of files
-> Let's make a different pipeline. You want to find out how many files and
-> directories there are in the current directory. Try to see if you can pipe
-> the output from `ls` into `wc` to find the answer.
+> ## ファイル数のカウント
+> 別のパイプラインを作成しましょう。現在のディレクトリにあるファイルとディレクトリの
+> 数を調べたいとします。 `ls` からの出力を `wc` にパイプして答えを見つけることができる
+> かどうかを確認してみてください。
 >
 > > ## Solution
 > > ~~~
@@ -321,10 +321,10 @@ $ wc -l *.tsv | sort -n | head -n 1
 > {: .solution}
 {: .challenge}
 
-> ## Writing to files
-> The `date` command outputs the current date and time. Can you write the
-> current date and time to a new file called `logfile.txt`? Then check
-> the contents of the file.
+> ## ファイルへの書き込み
+> `date`コマンドは、現在の日付と時刻を出力するコマンドです。現在の日付と時刻を 
+> `logfile.txt` という新しいファイルに書き込むことができますか？次に、次のことを確認して
+> ください。ファイルの内容を表示します。
 >
 > > ## Solution
 > > ~~~
@@ -332,10 +332,10 @@ $ wc -l *.tsv | sort -n | head -n 1
 > > $ cat logfile.txt
 > > ~~~~
 > > {: .bash}
-> > To check the contents, you could also use `less` or many other commands.
+> > 内容を確認するには、`less`や他の多くのコマンドを使用することもできます。
 > >
-> > Beware that `>` will happily overwrite an existing file without warning you,
-> > so please be careful.
+> > 注意点としては、`>`は警告を出さずに既存のファイルを上書きしてしまうことです。
+> > 注意深く行いましょう。
 > {: .solution}
 {: .challenge}
 
