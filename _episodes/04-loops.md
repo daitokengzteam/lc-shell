@@ -4,7 +4,7 @@ teaching: 20
 exercises: 10
 questions:
 - "ループとはなにか"
-- "繰り返しの仕事をするのにどのようにループを使うか。”
+- "繰り返しの仕事をするのにどのようにループを使うか。
 objectives:
 - "ループを使って複数のファイルを繰り返しリネームできるようになる。"
 - "Implement a loop to rename several files"
