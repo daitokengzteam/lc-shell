@@ -300,28 +300,13 @@ $ wc -l *.tsv | sort -n | head -n 1
 >
 > > ## Solution
 > >
-> > Here we use the `wc` command with the `-w` (word) flag on all `tsv` files, `sort` them and then output the last 11 lines (10 files and the total) using the `tail` command.
+> > ここでは、`wc`コマンドに `-w` (word) フラグを付けてすべての `tsv` ファイルを `sort` し、`tail` コマンドで最後の 11 行 (10 ファイルと合計) を出力しています。
 > >~~~
 > > wc -w *.tsv | sort -n | tail -n 11
 > >~~~
 > >{: .bash}
 > {: .solution}
 {: .challenge}
-
-これをcatコマンドに引き渡すとどうなるでしょう。やってみましょう。
-同じ結果がでていい？
-でてましたね。
-catコマンドは入力された文字を出力するだけなので同じ出力結果になります。
-同じ結果なのが正しい。
-練習。穴埋め問題。tsv行数を数えて、さっきのこのコマンド、シナリオを変えて、単語数のファイルを10個表示したい。以下の空欄を埋めてみましょう。
-単語数を数えて、行数に並び替えて、10件表示する。sortコマンドは昇順。少ない順にやってみましょう。
-ファイルとディレクトリのだす ls | wc 
-data書き込んでみましょう
-だいなり2つファイルに追記します。
-最後wcコマンドのマニュアルをみて単語数を出力するフラグを探してみましょう。
-tsvファイルで試してみましょう。時間があったらsortコマンドを使ってパイプで使ってみましょう。
-単語数を表示 -w
-
 
 > ## Counting number of files
 > Let's make a different pipeline. You want to find out how many files and
