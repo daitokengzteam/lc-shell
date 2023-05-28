@@ -358,45 +358,37 @@ $ tr ' ' '\n' < diary-clean.txt | sort | uniq -c | sort -nr > diary-final.txt
 
 ## さらに詳しく
 
-- Deborah S. Ray and Eric J. Ray, *Unix and Linux: visual quickstart guide*, 4th edition (2009).
+Deborah S. Ray and Eric J. Ray, *Unix and Linux: visual quickstart guide*, 4th edition (2009).
 リファレンスガイドとして貴重（そして高額でない） - 特に、コマンドラインを散発的にしか使わない場合!
 
-- [The Command Line Crash Course](https://learncodethehardway.org/unix/)
-'Learn UNIX the Hard Way' -- good for reminders of the basics.
+[The Command Line Crash Course](https://learncodethehardway.org/unix/)
+'Learn UNIX the Hard Way' -- 基本を思い出すのに適している。
 
 [Automate the Boring Stuff](https://automatetheboringstuff.com/)
 
 Another Coursera course, [Programming for Everybody (Python)](https://www.coursera.org/course/pythonlearn)
 is available and lasts 10 weeks, if you have 2-4 hours to spare per week.
-Python is popular in research programming as it is readable, relatively simple, and very powerful.
-Pythonで勉強する正規表現
+もう一つのCourseraのコース、 [Programming for Everybody (Python)](https://www.coursera.org/course/pythonlearn)が利用でき、週2～4時間の時間があれば、10週間で完了します。
 
-Bill Turkel and the Digital History community more broadly.
-The second lesson you did today was based on a lesson Bill has on [his website](https://williamjturkel.net/2013/06/15/basic-text-analysis-with-command-line-tools-in-linux/) and Bill is also a general editor of the [Programming Historian](https://programminghistorian.org/project-team). The Programming Historian is an open, collaborative book aimed at providing programming lessons to historians. Although the lessons are hooked around problems historians have, their lessons - which cover various programming languages - have a wide applicability - indeed today's course is based on two lessons I wrote with Ian Milligan, an historian at Waterloo, Canada - for ProgHist. Bill also has a wonderful tutorial on ['Named Entity Recognition with Command Line Tools in Linux'](http://williamjturkel.net/2013/06/30/named-entity-recognition-with-command-line-tools-in-linux/) which I thoroughly recommend if you want to automatically find, markup, and count names, places, and organisations in text files...
+Pythonは可読性が高く、比較的シンプルで、非常に強力であるので、研究用プログラミングで人気があります。
+ビル・ターケルとデジタル・ヒストリーのコミュニティは、より広い範囲に及んでいます
+今日の2つ目のレッスンは、Billが[彼のウェブサイト](https://williamjturkel.net/2013/06/15/basic-text-analysis-with-command-line-tools-in-linux/)で公開しているレッスンを元にしたもので、Billは[Programming Historian](https://programminghistorian.org/project-team)の総編集者です。
 
-## Conclusion
+Programming Historianは、歴史家にプログラミングのレッスンを提供することを目的とした、オープンかつ協同作業で作られた図書です。
+歴史学者が抱える問題にフックしたレッスンですが、さまざまなプログラミング言語をカバーする彼らのレッスンは、幅広い応用が可能です。実際、今日の講座は、カナダのウォータールーに住む歴史学者、イアン・ミリガン氏と私がProgramming Historian用に書いた2つのレッスンがベースになっています。
+Billはまた、['Named Entity Recognition with Command Line Tools in Linux'](http://williamjturkel.net/2013/06/30/named-entity-recognition-with-command-line-tools-in-linux/) という素晴らしいチュートリアルも持っていて、テキストファイル中の名前、場所、組織を自動的に検索、マークアップ、カウントしたい人にはぜひお勧めします...
 
-In this session you have learned to navigate the Unix shell, to undertake some
-basic file counting, concatenation and deletion, to query across data for common
-strings, to save results and derived data, and to prepare textual data for rigorous computational analysis.
+## 結論
+このセッションは、Unixシェルの操作、基本的なファイルのカウント、結合、削除、データ全体の共通文字列の問い合わせ、結果や派生データの保存、厳密な計算分析のためのテキストデータの準備を学びました。
+ここでは、Unix環境でできることの表面に触れたに過ぎません。
+このセッションが、さらなる調査や生産的な活動を促すのに十分なきっかけとなることを願っています。
+ツールは、実際のプロジェクトに組み込んでこそ、その真価を発揮するものであることに留意ください。
+何千ものファイルを操作し、数え、マイニングできることは、非常に便利です。
+画像ファイルなど、英数字を含まない大量のファイルでも、ファイル名に含まれるメタデータの記述量に応じて、簡単にソート、選択、照会することができます。
+Unix を使用するための前提条件ではないにせよ、時間をかけて一貫性のある予測可能な方法でデータを構造化することは、Unix コマンドを最大限に活用するための重要なステップであることは間違いないでしょう。
+定期的にUnixシェルを使っていれば、例えばファイルをコピーしたり修正したりする程度であれば、基本を新鮮に保つことができ、次にもっと複雑なコマンドでUnixシェルを使う必要が生じたときに、もう一度学ぶ必要はないでしょう。
 
-This only scratches the surface of what the Unix environment is capable of.
-It is hoped, however, that this session has provided a taster sufficient to
-prompt further investigation and productive play.
 
-Keep in mind that the full potential the tools can offer may only
-emerge upon embedding these skills into real projects. Nonetheless,
-being able to manipulate, count and mine thousands of files is extremely useful.
-Even a large collection of files which do not contain any alpha-numeric data
-elements, such as image files, can be easily sorted, selected and queried depending
-on the amount of description, of metadata contained in each filename.
-If not a prerequisite of working with the Unix, then taking the time
-to structure your data in a consistent and predictable manner is
-certainly a significant step towards getting the most out of Unix
-commands. And if you can find a way of using the Unix shell regularly - perhaps
-only to copy or amend files - you'll keep the basics fresh, meaning that
-next time you have cause to use the Unix shell for more complex commands,
-you shouldn't need to learn it all over again.
 
 ## References
 
