@@ -1,5 +1,5 @@
 ---
-title: "Working with free text"
+title: "フリーテキストの操作"
 teaching: 20
 exercises: 40
 questions:
