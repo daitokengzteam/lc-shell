@@ -403,44 +403,39 @@ $ wc -l *.tsv | sort -n | head -n 1
 > {: .solution}
 {: .challenge}
 
-## Mining or searching
+## マイニングまたは検索
 
-Searching for something in one or more files is something we'll often need to do,
-so let's introduce a command for doing that: `grep` (short for **global regular
-expression print**). As the name suggests, it supports regular expressions and
-is therefore only limited by your imagination, the shape of your data, and - when
-working with thousands or millions of files - the processing power at your disposal.
+1つまたは複数のファイルから何かを検索することは、しばしば必要になることです。
+そこで、それを行うためのコマンドを紹介しましょう。`grep` (**global regular
+expression print, グローバル正規表現出力**の略)です。
+その名前が示すように、このコマンドは正規表現をサポートしています。
+その名の通り、正規表現をサポートしているので、あなたの想像力、データの形状、
+そして何千、何百万ものファイルを扱う場合、あなたが自由に使える処理能力によってのみ制限されます。
 
-To begin using `grep`, first navigate to the `shell-lesson` directory if not already
-there. Then create a new directory "results":
-Grepを使う。想像力次第で思い通りにできる
-移動しましょう。リザルトディレクトリを作ります。
+
+`grep`を使い始めるには、まだ移動していない場合、まず`shell-lesson`ディレクトリに移動します。
+そして、新しいディレクトリresultsを作成してください。
 ~~~
 $ mkdir results
 ~~~
 {: .bash}
 
-
-Now let's try our first search:
+では、最初の検索をやってみましょう。
 
 ~~~
 $ grep 1999 *.tsv
 ~~~
 {: .bash}
 
-Remember that the shell will expand `*.tsv` to a list of all the `.tsv` files in the
-directory. `grep` will then search these for instances of the string "1999" and
-print the matching lines.
+シェルは `*.tsv` をディレクトリにあるすべての `.tsv` ファイルのリストに展開しされます。
+そして、`grep`はこれらのファイルから "1999"という文字列を検索し、マッチした行を表示します。
 
-ここでいうstring テキストの固まり
-
-> ## Strings
-> A string is a sequence of characters, or "a piece of text".
+> ## 文字列
+> 文字列とは、文字の並び、つまり「テキストの一部分」です。
 {: .callout}
 
-
-Press the up arrow once in order to cycle back to your most recent action.
-Amend `grep 1999 *.tsv` to `grep -c 1999 *.tsv` and hit enter.
+上矢印キーを1回押して、直近の操作に戻ります。
+`grep 1999 *.tsv`を`grep -c 1999 *.tsv`に修正し、Enterキーを押してください。
 
 ~~~
 $ grep -c 1999 *.tsv
@@ -454,14 +449,11 @@ $ grep -c 1999 *.tsv
 ~~~
 {: .output}
 
-The shell now prints the number of times the string 1999 appeared in each file.
-If you look at the output from the previous command, this tends to refer to the
-date field for each journal article.
+シェルは、各ファイルに1999という文字列が何回出現したかを表示するようになりました。
+前のコマンドの出力を見ると、これは各ジャーナル論文の日付フィールドを参照している
+ようです。
 
-大文字小文字を区別しない
-
-
-We will try another search:
+別の検索を試してみましょう。
 
 ~~~
 $ grep -c revolution *.tsv
@@ -475,8 +467,9 @@ $ grep -c revolution *.tsv
 ~~~
 {: .output}
 
-We got back the counts of the instances of the string `revolution` within the files.
-Now, amend the above command to the below and observe how the output of each is different:
+ファイル内の `revolution` という文字列の数が返されました。
+さて、先ほどのコマンドを以下のコマンドに修正して、それぞれの出力がどのように異なるかを
+観察してみましょう。
 
 ~~~
 $ grep -ci revolution *.tsv
@@ -490,16 +483,12 @@ $ grep -ci revolution *.tsv
 ~~~
 {: .output}
 
-This repeats the query, but prints a case
-insensitive count (including instances of both `revolution` and `Revolution` and other variants).
-Note how the count has increased nearly 30 fold for those journal article
-titles that contain the keyword 'america'. As before, cycling back and
-adding `> results/`, followed by a filename (ideally in .txt format), will save the results to a data file.
+これはクエリーを繰り返すものですが、大文字と小文字を区別せずにカウントを表示します。
+(`revolution`と`Revolution`の両方、あるいはその派生（訳注: ”revolutions”や”revolutionary”など）
+を含みます。)
 
-So far we have counted strings in files and printed to the shell or to
-file those counts. But the real power of `grep` comes in that you can
-also use it to create subsets of tabulated data (or indeed any data)
-from one or multiple files.  
+「america」というキーワードを含むジャーナル記事のタイトルが、30倍近くに増えていることに注目してください。
+前回と同様に、>results/とファイル名（.txt形式が理想的）を追加すると、結果をデータファイルに保存することができます。
 
 ~~~
 $ grep -i revolution *.tsv
