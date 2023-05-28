@@ -495,39 +495,36 @@ $ grep -i revolution *.tsv
 ~~~
 {: .bash}
 
-This script looks in the defined files and prints any lines containing `revolution`
-(without regard to case) to the shell. We let the shell add today's date to the
-filename:
-
+このスクリプトは、定義されたファイルを調べて、`revolution` を含む行を
+(大文字小文字を区別せずに) シェルに表示します。
+シェルに、今日の日付をファイル名に追加させます。
 ~~~
 $ grep -i revolution *.tsv > results/$(date "+%Y-%m-%d")_JAi-revolution.tsv
 ~~~
 {: .bash}
 
-This saves the subsetted data to a new file.
+抽出されたデータを新しいファイルに保存します。
 
-> ## Alternative date commands
-> This way of writing dates is so common that on some platforms (not macOS X)
-> you can get the same result by typing `$(date -I)` instead of
-> `$(date "+%Y-%m-%d")`.
+> ## dateの代替コマンド
+> このような日付の書き方は非常に一般的で、一部のプラットフォーム（macOS X以外）
+> では、`$(date "%Y-%m-%d")` の代わりに `$(date -I)` と入力しても同じ結果を
+> 得ることができます。
 {: .callout}
 
-However, if we look at this file, it contains every instance of the
-string 'revolution' including as a single word and as part of other words
-such as 'revolutionary'. This perhaps isn't as useful as we thought...
-Thankfully, the `-w` flag instructs `grep` to look for whole words only,
-giving us greater precision in our search.
+しかし、このファイルを見ると、'revolution'という文字列が、'revolutionary'などの
+他の単語の一部も含めて出力されています。
+これは思ったほど便利ではないかもしれません...。
+ありがたいことに、`-w` フラグは `grep` に単語全体のみを検索するように指示します。
+これによって、より正確に検索することができます。
 
 ~~~
 $ grep -iw revolution *.tsv > results/$(date "+%Y-%m-%d")_JAiw-revolution.tsv
 ~~~
 {: .bash}
 
-This script looks in both of the defined files and
-exports any lines containing the whole word `revolution` (without regard to case)
-to the specified `.tsv` file.
-
-We can show the difference between the files we created.
+このスクリプトは、定義された両方のファイルを検索し、大文字・小文字を区別せず、`revoltion`
+という単語を含む行すべてを、指定された `.tsv` ファイルに出力します。
+作成したファイルの差分を表示することができます。
 
 ~~~
 $ wc -l results/*.tsv
@@ -540,38 +537,33 @@ $ wc -l results/*.tsv
 ~~~
 {: .output}
 
-> ## Automatically adding a date prefix
-> Notice how we didn't type today's date ourselves, but let the
-> `date` command do that mindless task for us. Find out about the
-> `"+%Y-%m-%d"` option and alternative options we could have used.
+> ## 日付を自動的に追加する
+> 今日の日付を自分で入力しなかったことに注意してください。
+> `date` コマンドはそんなつまらない仕事をしてくれます。
+> `"+%Y-%m-%d"` オプションと、使用可能な代替オプションについて調べてみましょう。
 >
 > > ## Solution
-> > Using `date --help` will show you that the `+` option introduces
-> > a date format, where `%Y`, `%m` and `%d` are replaced by the year,
-> > month, and day respectively. There are many other percent-codes
-> > you could use.
-> >
-> > You might also see that `-I` is short for
-> > [--iso-8601](https://en.wikipedia.org/wiki/ISO_8601), which
-> > essentially avoids the confusion between the European
-> > and American date formats `DD.MM.YYYY` and `MM/DD/YYYY`.
+> > `date --help` を使用すると、`+` オプションが導入されていることがわかります
+> > `%Y`、`%m`、`%d` はそれぞれ年、月、日に置き換えられます。
+> > 他にもたくさんのパーセントコードがあります
+> > `-I` は[--iso-8601](https://en.wikipedia.org/wiki/ISO_8601)の省略形で、
+> >ヨーロッパの日付形式`DD.MM.YYYY` と
+> > アメリカの日付形式  `MM/DD/YYYY`の違いによる混乱を避けるためのオプションです。
 > {: .solution}
 {: .challenge}
 
-オプションを探してみましょう。dateのヘルプをみると
+最後に、先ほど取り上げた**正規表現構文**を使って、似たような単語を検索してみます。
 
-Finally, we'll use the **regular expression syntax** covered earlier to search for similar words.
-
-> ## Basic, extended, and PERL-compatible regular expressions
-> There are, unfortunately, [different ways of writing regular expressions](https://www.gnu.org/software/grep/manual/html_node/Regular-Expressions.html).
-> Across its various versions, `grep` supports "basic", at least two types of "extended",
-> and "PERL-compatible" regular expressions. This is a common cause of confusion, since
-> most tutorials, including ours, teach regular expressions compatible with the PERL
-> programming language, but `grep` uses basic by default.
-> Unless you want to remember the details, make your life easy by always using the
-> most advanced regular expressions your version of `grep` supports (`-E` flag on
-> macOS X, `-P` on most other platforms) or when doing something more complex
-> than searching for a plain string.
+> ## 基本正規表現、拡張正規表現、Perl互換正規表現
+> 残念ながら、正規表現には書き方の違いがあります。
+> 様々なバージョンにおいて、`grep`は「基本正規表現」、少なくとも2種類の拡張表現である
+> 「拡張正規表現」と「Perl互換正規表現」をサポートしています。私たちの
+> チュートリアルを含め、ほとんどのチュートリアルではPerlプログラミング言語と互換性の
+> ある正規表現を教えていますが、`grep`はデフォルトで基本正規表現
+> を使用するので、これはよくある混乱の原因となっています。
+> 細かいことを覚えておきたいのでなければ、常にあなたのバージョンの `grep` がサポートする
+> 最も高度な正規表現を使用するのが簡単です。(`-E` フラグを使用します。macOS X、
+> 他のほとんどのプラットフォームでは `-P`） または、単純な文字列検索よりも複雑なことをするときに使用します。
 {: .callout}
 
 The regular expression 'fr[ae]nc[eh]' will match "france", "french", but also "frence" and "franch".
