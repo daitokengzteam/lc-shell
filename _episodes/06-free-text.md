@@ -151,7 +151,7 @@ $ tr ' ' '\n' < gulliver-clean.txt | sort | uniq -c | sort -nr > gulliver-final.
 > > (replace this line with your solution)
 > > ```
 > > {: .bash}
-> Save the file as `remove-quotes.sh` and run it from the command line like this:
+> このファイルを `remove-quotes.sh`という名前で保存し、コマンドラインから次のように実行します：
 > > ```
 > > bash remove-quotes.sh
 > > ```
