@@ -148,7 +148,7 @@ $ tr ' ' '\n' < gulliver-clean.txt | sort | uniq -c | sort -nr > gulliver-final.
 > > ```
 > > #!/bin/bash
 > > # # This script removes quote marks from gulliver-clean.txt and saves the result as　gulliver-noquotes.txt
-> > (replace this line with your solution)
+> > (回答はこの行に置き換えてください。)
 > > ```
 > > {: .bash}
 > このファイルを `remove-quotes.sh`という名前で保存し、コマンドラインから次のように実行します：
