@@ -231,7 +231,8 @@ $ wc -l *.tsv | sort -n
     13712 2014-01-31_JA-africa.tsv
     27392 2014-01-31_JA-america.tsv
    507732 2014-01_JA.tsv
-   554211 total
+   554211 
+   total
 ~~~
 {: .output}
 
@@ -339,9 +340,9 @@ $ wc -l *.tsv | sort -n | head -n 1
 > {: .solution}
 {: .challenge}
 
-> ## Appending to a file
-> While `>` writes to a file, `>>` appends something to a file. Try to append the
-> current date and time to the file `logfile.txt`?
+> ## ファイルに追記する
+> `>`はファイルの新規作成を行いますが、`>>`はファイルに追記を行います。現在の日付と
+> 時刻を`logfile.txt`に追記してみましょう。
 >
 > > ## Solution
 > > ~~~
@@ -352,27 +353,25 @@ $ wc -l *.tsv | sort -n | head -n 1
 > {: .solution}
 {: .challenge}
 
-> ## Counting the number of words
+> ## 単語数のカウント
 >
-> Check the manual for the `wc` command (either using `man wc` or `wc --help`)
-> to see if you can find out what flag to use to print out the number of words
-> (but not the number of lines and bytes). Try it with the `.tsv` files.
+> wcコマンドのマニュアルを（man wcまたはwc --helpを使って）チェックして、ワード数
+> （行数とバイト数は表示しない）を表示するためのフラグを確認してみてください。.tsv
+> ファイルで試してみてください。
 >
-> If you have time, you can also try to sort the results by piping it to `sort`.
-> And/or explore the other flags of `wc`.
+> もし時間があれば、sortにパイプすることで、結果を並び替えることもできます。また、
+> wcの他のオプションも試してみてください。
 >
 > > ## Solution
 > >
-> > From `man wc`, you will see that there is a `-w` flag to print the number of
-> > words:
+> > man wcからは、単語数を表示するための -wフラグがあることがわかります。
 > >
 > > ~~~
-> >      -w      The number of words in each input file is written to the standard
-> >              output.
+> >      -w      各入力ファイルの単語数が標準出力に書き込まれます。
 > > ~~~
 > > {: .output}
 > >
-> > So to print the word counts of the `.tsv` files:
+> > TSVファイルの単語数が表示されます。
 > >
 > > ~~~
 > > $ wc -w *.tsv
@@ -387,7 +386,7 @@ $ wc -l *.tsv | sort -n | head -n 1
 > > ~~~
 > > {: .output}
 > >
-> > And to sort the lines numerically:
+> > また、行を数値でソートする場合
 > >
 > > ~~~
 > > $ wc -w *.tsv | sort -n
