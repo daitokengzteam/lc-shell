@@ -3,46 +3,31 @@ title: "フリーテキストの操作"
 teaching: 20
 exercises: 40
 questions:
-- "How do we work with complex files?"
+- "複雑なファイルをどのように操作しますか？"
 objectives:
-- "Use shell tools to clean and transform free text"
+- "シェルのツールを使い、フリーテキストのクリーニングと変換を行う"
 keypoints:
-- "Shell tools can be combined to powerful effect"
+- "シェルツールを組み合わせて、強力な効果を発揮"
 ---
-### Working with free text
+### フリーテキストでの作業
 
-So far we have looked at how to use the Unix shell to manipulate, count, and
-mine tabulated data. 
-UNIXシェルの操作の方法、数えるとかひょう形式マイニングする方法を勉強してきました。
-Some library data, especially digitised documents, is much messier than
-tabular metadata. 
-図書館のいくつかのデータ、デジタイズ化したデータはもっときたないです。
-Nonetheless, many of the same techniques can be applied
-to non-tabulated data such as free text. 
-しかしう今までみてきたテクニックが表形式でないデータでも適応できます。
-We need to think carefully about
-what it is we are counting and how we can get the best out of the Unix shell.
-数えているものとか、UNIXシェルでベストのものを注意深く考える必要があります。
+これまで、Unixシェルを使い、表データの操作、数えたり、マイニングするの方法をみてきました。
 
+図書館のデータ、特にデジタル化された文書には、表形式のメタデータよりもずっと厄介なものがあります。
 
-Thankfully there are plenty of folks out there doing this sort of work and we
-can borrow what they do as an introduction to working with these more complex files.
-借りてくることができます。
+それでも、同じ手法の多くは、フリーテキストのような表になっていない非集計データに適用することができまする。
 
-So for this final exercise we're going to leap forward a little in terms
-of difficulty to a scenario where we won't learn about everything that
-is happening in detail or discuss at length each command. We're going
-to prepare and pull apart texts to demonstrate some of the potential applications of the Unix shell. And where commands we've learnt about are used,
-I've left some of the figuring out to do to you - so please refer to your notes if you get stuck!
-最後のエクササイズとして、潜在的なアプリケーションのデモをやるためのテキストを準備します。このコマンドの勉強についていくつか注釈を書いておくので困ったらそこをみてください。
-先に進む前に隣の人と話してどのテキストをやるか選んでください・
+何を数えるのかとや、UNIXシェルでのベストな方法を注意深く考える必要があります。
 
+ありがたいことに、この種の仕事をしている人がたくさんいて、より複雑なファイルを扱うための入門として、彼らがしていることを借用することができます。
+それで、最後の演習では、難易度を少し上げ、起きていることすべての詳細や、各コマンドについてじっくり議論したりすることのないシナリオにします。
+テキストを準備したり、分解したりして、Unixシェルの潜在的なアプリケーションのいくつかを示すことにします。
+学習したコマンドを使用するところでは、一部説明を省いてあり、行き詰まったらノートを参照してください。
+先に進む前に、隣の人に声をかけて、どのタイプの文章を一緒に作るか選んでください。選択肢は3つです、
 
-Before going any further, speak to the person next to you and choose which type of text you'd like to work on together. You have three options:
-
-- An example of hand transcribed text: *Gulliver's Travels* (1735)ガリバー旅行記
-- An example of text captured by an optical character recognition process: *General Report on the Physiography of Maryland. A dissertation, etc. (Reprinted from Report of Maryland State Weather Service.) [With maps and illustrations.]* 1898 (from [https://doi.org/10.21250/db12](https://doi.org/10.21250/db12))OCRテキスト
-- An example of a webpage: Piper's World (a GeoCities page from 1999 saved at [archive.org](http://wayback.archive.org/web/20091020080943/http:/geocities.com/Heartland/Hills/7649/diary.html))Webページ
+- 写本のテキストの例：ガリバー旅行記(1735)
+- OCRで取り込まれたテキストの例：メリーランドの地形に関する一般報告：学位論文（Report of Mayland State Weathからの転載、地図・イラストを含む）[https://doi.org/10.21250/db12](https://doi.org/10.21250/db12))
+- Webページの例；パイパーの世界 （1999年にarchive.orgに保存されたGeoCitiesのホームページ）(http://wayback.archive.org/web/20091020080943/http:/geocities.com/Heartland/Hills/7649/diary.html))
 
 ## Option 1: Hand transcribed text　テキストをつめてきれいにする
 
