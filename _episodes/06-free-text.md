@@ -129,19 +129,19 @@ $ tr ' ' '\n' < gulliver-clean.txt | sort | uniq -c | sort -nr > gulliver-final.
 最後の第四段階では、3つ目のステップで生成された重複をカウントしたものを再度ソートします。
 
 > ## Challenge
-> There are still some remaining punctuation marks in the text. They are called 'smart' or 'curly' quotes.
-> Can you remove them using `sed`?カーリー、スマートクオーツ、
+> 本文中には、まだ句読点が残っています。それらは「スマートクォート」又は「カーリークォート」と呼ばれます。
+> sed` を使って削除できますか？
 >
-> Hint: These quote marks are not among the 128 characters of the ASCII standard,
-> so in the file they are encoded using a different standard, UTF-8.
-> While this is no problem for `sed`, the window you are typing into may not understand UTF-8.
-> If so you will need to use a Bash script; we encountered these at the end of episode 4,
+> ヒント：引用符は、ASCII規格の128文字にありません、それで、ファイルの中では別の規格であるUTF-8でエンコードされています
+> これは `sed` では問題ありませんが、入力する端末のウィンドウは UTF-8 を理解できないかもしれません。
+> その場合、Bashスクリプトを使用する必要があります：Bashスクリプトは、エピソード4「ループを使った面倒なことの自動化」の最後のところで触れています。
 > 'Automating the tedious with loops'.
 >回数を出力できるようになりました。これは私達が調査の基本として、他のテキストと比べることができる。違うデータの変化を試したい場合は最初から処理をします。
-> As a reminder, use the text editor of your choice to write a file that looks like this:
+> 注意点として、お好みのテキストエディタを使い、以下のようなファイルを書いてください。
+
 > > ```
 > > #!/bin/bash
-> > # This script removes quote marks from gulliver-clean.txt and saves the result as gulliver-noquotes.txtいくつかのちょっとパワフルなコマンドラインですることができます。
+> > # このスクリプトは、gulliver-clean.txtから引用符を削除し、その結果をgulliver-noquotes.txtとして保存します。
 > > (replace this line with your solution)
 > > ```
 > > {: .bash}
@@ -163,22 +163,15 @@ $ tr ' ' '\n' < gulliver-clean.txt | sort | uniq -c | sort -nr > gulliver-final.
 > {: .solution}
 {: .challenge}
 
-We have now taken the text apart and produced a
-count for each word in it. This is data we can prod and poke
-and visualise, that can form the basis of our investigations,
-and can compare with other texts processed in the same way.
-And if we need to run a different set of transformation for
-a different analysis, we can return to `gulliver-clean.txt` to start that work.
+今、私たちはテキストを分解し、その中のそれぞれの単語の個数を数えました。
+これは、突合して可視化できるデータで、同じ方法で処理された別のテキストと比較することができます。
+また、異なる方法で別の変換を実行する必要がある場合は、`gulliver-clean.txt` に戻り、その作業を開始することができます。
+これらのすべては、地味でも非常に強力なコマンドライン上のいくつかのコマンドを使っています。
 
-And all this using a few commands on an otherwise unassuming but very powerful command line.
-
-## Option 2: Optical character recognised text
-
-### Grabbing a text, cleaning it up
-
-We're going to work with `201403160_01_text.json`.
-
-Let's look at the file.
+## オプション2：光学文字認識テキスト
+### テキストを集め、きれいにする
+`201403160_01_text.json`で作業を進めていきます。
+ファイルを見ましょう。
 
 ~~~
 $ less -N 201403160_01_text.json
@@ -211,61 +204,56 @@ $ less -N 201403160_01_text.json
 ~~~
 {: .output}
 
-We're going to start by using the `tr` command, used for translating or
-deleting characters. Type and run:
+文字の解釈や削除で使う `tr` コマンドを使うことから始ます。
+タイプして実行します。
 
 ~~~
 $ tr -d [:punct:] < 201403160_01_text.json > 201403160_01_text-nopunct.txt
 ~~~
 {: .bash}
 
-This uses the translate command and a special syntax to remove all punctuation.
-It also requires the use of both the output redirect `>` we have seen and the input redirect `<` we haven't seen.
-
-Finally regularise the text by removing all the uppercase lettering.
+こちらは、translateコマンドと特殊な構文を使い、すべての句読点を削除するものです。
+これまで見てきた出力リダイレクト `>` とまだ見ていない入力リダイレクト `<` の両方を使用する必要があります。
+最後に、大文字をすべて削除して、テキストを正規化します。
 
 ~~~
 $ tr [:upper:] [:lower:] < 201403160_01_text-nopunct.txt > 201403160_01_text-clean.txt
 ~~~
 {: .bash}
 
-Open the `201403160_01_text-clean.txt` in a text editor. Note how the text has been transformed ready for analysis.
+201403160_01_text-clean.txt` というファイルをテキストエディタで開いてください。
+テキストがどのように変換され、分析できるようになったかに注目してください。
 
-### Pulling a text apart, counting word frequencies
-
-We are now ready to pull the text apart.
+### テキストを分解し、単語頻度を数える
+ここで、テキストを取り出し、分解する準備が整いました。
 
 ~~~
 $ tr ' ' '\n' < 201403160_01_text-clean.txt | sort | uniq -c | sort -nr > 201403160_01_text-final.txt
 ~~~
 {: .bash}
 
-Here we've made extended use of the pipes we saw in [Counting and mining with the shell]({{ page.root }}{% link _episodes/05-counting-mining.md %}). The first part of this script uses the translate command again, this time to translate every blank space into `\n` which renders as a new line. Every word in the file will at this stage have its own line.
+Here we've made extended use of the pipes we saw in [Counting and mining with the shell]({{ page.root }}{% link _episodes/05-counting-mining.md %}). 
+ここでは、[シェルを使用した集計とマイニング]({{ page.root }}{% link _episodes/05-counting-mining.md %})で見たパイプを拡張して使います。
+このスクリプトの最初の部分では、再び translate コマンドを使い、すべての空白を `\n` に変換し、改行として表示します。
+この段階で、ファイル内の単語がそれぞれの行を持つことになります。
+次に、`sort`コマンドを使い、テキストを元の並びからアルファベット順に並べ替えます。
+次に、もう一つの新しいコマンドの `uniq` に `-c` フラグを組み合わせて、重複した行を削除し、単語数をカウントします。
+次に、前のステップで生成された単語数によって、再びテキストを並べ替えます。
 
-The second part uses the `sort` command to rearrange the text from its original order into an alphabetical configuration.
+**注：最終的な出力には1つの問題があります、数えられた単語がすべて本当の単語であるとは限りません（1回または2回だけ数えられた単語を参照）。
+何が起こったのかをよく理解するためには、ネットで「OCR 認識精度」」を検索してください。**
 
-The third part uses `uniq`, another new command, in combination with the `-c` flag to remove duplicate lines and to produce a word count of those duplicates.
+いずれにせよ、これでテキストを分解して、その中の単語を一つ一つ数えることができるようになりました。
+これは、突合し可視化できるデータで、調査の基礎となる様式となるものであり、同じ方法で処理された別のテキストと比較することができます。
+別の分析のために別の変換セットを実行する必要がある場合は、`201403160_01_text-clean.txt`に戻り、その作業を開始することができます。
+これらすべては、地味ではあるが非常に強力なコマンドライン上のいくつかのコマンドを使います。
 
-The fourth and final part sorts the text again by the counts of duplicates generated in step three.
+## オプション3：ウェブページ
 
-**Note: your final output will have one problem - not all the words counted are real words (see the words counted only 1 or 2 times). To better understand what has happened, search online to find out more about Optical Character Recognition of texts**
+### テキストを集め、綺麗にする
 
-Either way we have now taken the text apart and produced a
-count for each word in it. This is data we can prod and poke
-and visualise, that can form the basis of our investigations,
-and can compare with other texts processed in the same way.
-And if we need to run a different set of transformation for
-a different analysis, we can return to `201403160_01_text-clean.txt` to start that work.
-
-And all this using a few commands on an otherwise unassuming but very powerful command line.
-
-## Option 3: A webpage
-
-### Grabbing a text, cleaning it up
-犬の日記
-We're going to work with `diary.html`.
-
-Let's look at the file.
+`diary.html`で作業を進めます。
+ファイルを見てみましょう。
 
 ~~~
 $ less -N diary.html
@@ -299,103 +287,81 @@ $ less -N diary.html
 ~~~
 {: .output}
 
-We're going to start by using the `sed` command. The command allows you to edit files directly.
-sedコマンド265－330の行を消します。
+`sed`コマンドを使い進めていきます。
+このコマンドは、ファイルを直接編集できます。
+
 ~~~
 $ sed '265,330d' diary.html > diary-nofoot.txt
 ~~~
 {: .bash}
 
-The command `sed` in combination with the `d`
-value will look at `diary.html` and delete all
-values between the rows specified. The `>` action then
-prompts the script to this edited text to the new file specified.
-リダイレクト機能で編集したファイルを新しいファイルに保存します。
+コマンド `sed` に`d` を組み合わせ、`diary.html` を見て、 特定行の間のすべての値を削除します。
+'>'のアクションは、編集されたテキストを特定の新しいファイルに保存するようスクリプトにさせるものです。
 
 ~~~
 $ sed '1,221d' diary-nofoot.txt > diary-noheadfoot.txt
 ~~~
 {: .bash}
 
-This does the same as before, but for the header.
-同じようにヘッダ－も削除します。
-
-You now have a cleaner text. The next step is to
-prepare it even further for rigorous analysis.
-ちょっときれいなテキストができました。
-次のステップを実行します。
-
-First we wil remove all the html tags. Type and run:
-タブを消します。以下のように消します。
+これは前と同じで、ヘッダー部分に対して行います。
+綺麗なテキストになりました。
+次のステップは、さらに厳密な分析の準備をします。
+タイプして実行してください。
 
 ~~~
 $ sed -e 's/<[^>]*>//g' diary-noheadfoot.txt > diary-notags.txt
 ~~~
 {: .bash}
 
-Here we are using a regular expression (see the [Library Carpentry regular expression lesson](https://librarycarpentry.org/lc-data-intro/01-regular-expressions/) to find all valid html tags (anything within angle brackets) and delete them). This is a complex regular expression, so don't worry too much about how it works! The script also requires the use of both the output redirect `>` we have seen and the input redirect `<` we haven't seen.
-HTMLタグを表示するのに正規表現を使っています。このタグのだいなりしょうなり記号で囲まれたところ、正規表現レッスンで、HTMLタグを削除というのがでてくる。
-
-We're going to start by using the `tr` command, used for translating or
-deleting characters. Type and run:
-ここがこの正規表現で削除します。複雑な正規表現なのであまり深く考えなくともいいです。このスクリプトも同様に
+ここでは、正規表現を使い ([ライブラリ カーペントリーの正規表現レッスン] (https://librarycarpentry.org/lc-data-intro/01-regular-expressions/) を参照）、すべての有効な html タグ (角括弧内のもの) を見つけて削除します。
+これは複雑な正規表現なので、どう動くかはあまり気にしないでください！ 
+また、このスクリプトでは、これまで見てきた出力リダイレクト `>` と、まだ見ていない入力リダイレクト `<` の両方を使う必要があります。
+まず、文字を解釈したり削除したりするのに使う `tr` コマンドを使います。
+タイプして実行します。
 
 ~~~
 $ tr -d '[:punct:]\r' < diary-notags.txt > diary-notagspunct.txt
 ~~~
 {: .bash}
 
-This uses the translate command and a special syntax to remove all punctuation
-(`[:punct:]`) and carriage returns (`\r`).
-改行も削除しています。
-
-Finally regularise the text by removing all the uppercase lettering.
-そうすると単語だけになります。
+これはtrコマンドと特殊な文法を使って、句読点(`[:punct:]`)と改行(`\r`)を削除しています。
+最後に、全ての大文字を小文字に変換し、テキストを正規化します。
 
 ~~~
 $ tr [:upper:] [:lower:] < diary-notagspunct.txt > diary-clean.txt
 ~~~
 {: .bash}
 
-Open the `diary-clean.txt` in a text editor. Note how the text has been transformed ready for analysis.
+`diary-clean.txt`をテキストエディタで開いてください。
+テキストがどのように変換されて、解析の準備ができるようになっているのか見てみましょう。
 
-trコマンドを使って、特殊文字を削除します。最後に大文字小文字を消します。
-分析の準備ができました。
-
-### Pulling a text apart, counting word frequencies
+### テキストを分解し、単語出現頻度を数える
 出力順に並べ替える。
-
-We are now ready to pull the text apart.
+テキストを分解する準備が整いました。
 
 ~~~
 $ tr ' ' '\n' < diary-clean.txt | sort | uniq -c | sort -nr > diary-final.txt
 ~~~
 {: .bash}
 
-Here we've made extended use of the pipes we saw in [Counting and mining with the shell]({{ page.root }}{% link _episodes/05-counting-mining.md %}). The first part of this script uses the translate command again, this time to translate every blank space into `\n` which renders as a new line. Every word in the file will at this stage have its own line.
+ここでは、[シェルを使用した集計とマイニング]({{ page.root }}{% link _episodes/05-counting-mining.md %})で見たパイプを拡張して使います。
+このスクリプトの最初のところで、再度 translate コマンドを使い、すべての空白を `\n` に変換し、改行としてレンダリングします。
+この段階で、ファイル内のすべての単語がそれぞれの行を持ちます。
+次に、`sort`コマンドを使い、テキストを元の並びからアルファベット順に並べ替えます。
+次に、もう一つの新しいコマンドである `uniq` の `-c` フラグを組み合わせ、重複した行を削除し、単語数を生成します。
+最後の第４部は、3つ目のステップで生成された重複の数で再びテキストをソートする部分です。
+これで、テキストを分解し、その中の単語を一つ一つ数えることができました。
+これは、突合し可視化できるデータで、調査の基礎となる様式となるものであり、同じ方法で処理された別のテキストと比較することができます
+別の分析のために別の変換セットを実行する必要がある場合は、`diary-final.txt`に戻り、その作業を開始することができます。
+これらすべては、地味ではあるが非常に強力なコマンドライン上のいくつかのコマンドを使います。
 
-The second part uses the `sort` command to rearrange the text from its original order into an alphabetical configuration.
 
-The third part uses `uniq`, another new command, in combination with the `-c` flag to remove duplicate lines and to produce a word count of those duplicates.
+## さらに詳しく
 
-The fourth and final part sorts the text again by the counts of duplicates generated in step three.
+- Deborah S. Ray and Eric J. Ray, *Unix and Linux: visual quickstart guide*, 4th edition (2009).
+リファレンスガイドとして貴重（そして高額でない） - 特に、コマンドラインを散発的にしか使わない場合!
 
-We have now taken the text apart and produced a
-count for each word in it. This is data we can prod and poke
-and visualise, that can form the basis of our investigations,
-and can compare with other texts processed in the same way.
-And if we need to run a different set of transformation for
-a different analysis, we can return to `diary-final.txt` to start that work.
-
-And all this using a few commands on an otherwise unassuming but very powerful command line.
-
-## Where to go next
-
-Deborah S. Ray and Eric J. Ray, *Unix and Linux: visual quickstart guide*, 4th edition (2009).
-Invaluable (and not expensive) as a reference guide - especially if you only use the command line sporadically!
-本を読むとか正規表現の勉強
-
-[The Command Line Crash Course](https://learncodethehardway.org/unix/)
+- [The Command Line Crash Course](https://learncodethehardway.org/unix/)
 'Learn UNIX the Hard Way' -- good for reminders of the basics.
 
 [Automate the Boring Stuff](https://automatetheboringstuff.com/)
