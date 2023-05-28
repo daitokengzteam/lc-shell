@@ -25,7 +25,8 @@ keypoints:
 
 - 写本のテキストの例：ガリバー旅行記(1735)
 - OCRで取り込まれたテキストの例：メリーランドの地形に関する一般報告：学位論文（Report of Mayland State Weathからの転載、地図・イラストを含む）[https://doi.org/10.21250/db12](https://doi.org/10.21250/db12)
-- Webページの例；パイパーの世界 （1999年にarchive.orgに保存されたGeoCitiesのホームページ)(http://wayback.archive.org/web/20091020080943/http:/geocities.com/Heartland/Hills/7649/diary.html))
+- Webページの例；パイパーの世界 （1999年にarchive.orgに保存されたGeoCitiesのホームページ)(
+http://wayback.archive.org/web/20091020080943/http:/geocities.com/Heartland/Hills/7649/diary.html)
 
 ## オプション１：写本
 
