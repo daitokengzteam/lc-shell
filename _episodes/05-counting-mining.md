@@ -566,10 +566,9 @@ $ wc -l results/*.tsv
 > 他のほとんどのプラットフォームでは `-P`） または、単純な文字列検索よりも複雑なことをするときに使用します。
 {: .callout}
 
-The regular expression 'fr[ae]nc[eh]' will match "france", "french", but also "frence" and "franch".
-It's generally a good idea to enclose the expression in single quotation marks, since
-that ensures the shell sends it directly to grep without any processing (such as trying to
-expand the wildcard operator *).
+正規表現'fr[ae]nc[eh]'は、「france」「french」の他に、「frence」「franch」にもマッチします。
+一般的には、式をシングルクォーテーションで囲むとよいでしょう、
+というのは、シェルがワイルドカード演算子を展開しようとするような処理をせずに、直接grepに送信することを保証するためです。
 
 ~~~
 $ grep -iwE 'fr[ae]nc[eh]' *.tsv
