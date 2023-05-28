@@ -164,8 +164,7 @@ $ tr ' ' '\n' < gulliver-clean.txt | sort | uniq -c | sort -nr > gulliver-final.
 > > sed -Ee 's/[“”‘’]//g' gulliver-clean.txt > gulliver-noquotes.txt
 > > ```
 > > {: .bash}
-> > If this doesn't work for you, you might need to check whether your text editor can
-> > save files using the UTF-8 encoding.
+> >　うまくいかなかったときは、使っているテキストエディタがUTF-8で保存できるかを確認する必要があります。
 > {: .solution}
 {: .challenge}
 
