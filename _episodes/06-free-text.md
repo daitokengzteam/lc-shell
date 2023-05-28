@@ -12,35 +12,24 @@ keypoints:
 ### フリーテキストでの作業
 
 これまで、Unixシェルを使い、表データの操作、数えたり、マイニングするの方法をみてきました。
-
 図書館のデータ、特にデジタル化された文書には、表形式のメタデータよりもずっと厄介なものがあります。
-
 それでも、同じ手法の多くは、フリーテキストのような表になっていない非集計データに適用することができまする。
-
 何を数えるのかとや、UNIXシェルでのベストな方法を注意深く考える必要があります。
-
 ありがたいことに、この種の仕事をしている人がたくさんいて、より複雑なファイルを扱うための入門として、彼らがしていることを借用することができます。
-
 それで、最後の演習では、難易度を少し上げ、起きていることすべての詳細や、各コマンドについてじっくり議論したりすることのないシナリオにします。
-
 テキストを準備したり、分解したりして、Unixシェルの潜在的なアプリケーションのいくつかを示すことにします。
-
 学習したコマンドを使用するところでは、一部説明を省いてあり、行き詰まったらノートを参照してください。
-
 先に進む前に、隣の人に声をかけて、どのタイプの文章を一緒に作るか選んでください。選択肢は3つです、
 
 - 写本のテキストの例：ガリバー旅行記(1735)
 - OCRで取り込まれたテキストの例：メリーランドの地形に関する一般報告：学位論文（Report of Mayland State Weathからの転載、地図・イラストを含む）[https://doi.org/10.21250/db12](https://doi.org/10.21250/db12)
 - Webページの例；パイパーの世界 （1999年にarchive.orgに保存されたGeoCitiesのホームページ）(http://wayback.archive.org/web/20091020080943/http:/geocities.com/Heartland/Hills/7649/diary.html))
 
-## Option 1: Hand transcribed text　テキストをつめてきれいにする
-
-### Grabbing a text, cleaning it up
-
-We're going to work with the `gulliver.txt` file we made in the previous lesson.
-You should (still) be working in the `shell-lesson` directory.　シェルレッスンディレクトリで作業します。
-
-Let's look at the file.　ファイルを使って作業しましょう
+## オプション１：写本
+### テキストを集めて、整形する。
+前回のレッスンで作成した `gulliver.txt` ファイルを使い作業を進めます。
+shell-lessonディレクトリで作業します。
+ファイルを見てみましょう。
 
 ~~~
 $ less -N gulliver.txt
@@ -88,67 +77,56 @@ $ less -N gulliver.txt
 ~~~
 {: .output}
 
-We're going to start by using the `sed` command. The command allows you to edit files directly. sedコマンドを使って作業してみましょう。
+`sed` コマンドを使うことから始めていきます。このコマンドは、ファイルを直接編集できます。
 
 ~~~
 $ sed '9352,9714d' gulliver.txt > gulliver-nofoot.txt
 ~~~
 {: .bash}
 
-The command `sed` in combination with the `d`
-value will look at `gulliver.txt` and delete all
-values between the rows specified. The `>` action then
-prompts the script to this edited text to the new file specified.
-指定した行を消してくれます。新しいファイルに保存します。
+コマンドの `sed` に`d`の値を組み合わせると、 `gulliver.txt` を見て、指定した行の間のすべての値を削除します。
+'>` のアクションは、編集されたテキストを指定された新しいファイルに出力するようスクリプトに促します。
+
 ~~~
 $ sed '1,37d' gulliver-nofoot.txt > gulliver-noheadfoot.txt
 ~~~
 {: .bash}
 
-This does the same as before, but for the header.
-同じころをヘッダーにも行います。
-You now have a cleaner text. The next step is to
-prepare it even further for rigorous analysis.
-きれいにできました。
-We now use the `tr` command, used for translating or
-deleting characters. Type and run:
-次のステップはもっと細かい分析をするための準備です。trというコマンドを使います。
-変換したり消したりします。以下のコマンドを売ってください。
+同じことをヘッダーにも行います。
+テキストをきれいにできました。
+trというコマンドを使い、文字を変換したり削除します。入力し、実行してください。
+
 ~~~
 $ tr -d '[:punct:]\r' < gulliver-noheadfoot.txt > gulliver-noheadfootpunct.txt
 ~~~
 {: .bash}
 
-This uses the translate command and a special syntax to remove all punctuation
-(`[:punct:]`) and carriage returns (`\r`).
-It also requires the use of both the output redirect `>` we have seen and the input redirect `<` we haven't seen.
+これは、translateコマンドを使い、すべての句読点(`[:punct:]`)とキャリッジリターンを削除する特別な構文です。
+これまで見てきた出力リダイレクト `>` とまだ見ていない入力リダイレクト `<` の両方の使用が求められます。
+最後に、大文字をすべて小文字に変換し、テキストを正規化します。
 
-Finally regularise the text by removing all the uppercase lettering.
-大文字と小文字を変換する
+
 ~~~
 $ tr [:upper:] [:lower:] < gulliver-noheadfootpunct.txt > gulliver-clean.txt
 ~~~
 {: .bash}
 
-Open the `gulliver-clean.txt` in a text editor. Note how the text has been transformed ready for analysis.
-テキストを分解する準備ができました。パイプを使います。
+テキストエディタで`gulliver-clean.txt`を開いてください。
+テキストがどのように変換され、分析の準備が整ったかみてください。
 
-### Pulling a text apart, counting word frequencies
-
-We are now ready to pull the text apart.
+### テキストを分解し、単語の出現頻度を数える
+これで、テキストを分解する準備が整いました。
 
 ~~~
 $ tr ' ' '\n' < gulliver-clean.txt | sort | uniq -c | sort -nr > gulliver-final.txt
 ~~~
 {: .bash}
 
-Here we've made extended use of the pipes we saw in [Counting and mining with the shell]({{ page.root }}{% link _episodes/05-counting-mining.md %}). The first part of this script uses the translate command again, this time to translate every blank space into `\n` which renders as a new line. Every word in the file will at this stage have its own line.変換コマンドを使って、スペースを開業に変換します。すべての単語が一行一単語になります。次のパートでソートコマンドでABC順にソートします。uniq -c重複した行を削除して何回重複していたか出力してくれます。最後のパート　もう一回並び替えここででてきたテキストの単語の重複回数をソートします。
-
-The second part uses the `sort` command to rearrange the text from its original order into an alphabetical configuration.
-
-The third part uses `uniq`, another new command, in combination with the `-c` flag to remove duplicate lines and to produce a word count of those duplicates.
-
-The fourth and final part sorts the text again by the counts of duplicates generated in step three.
+ここでは、[シェルのカウントとマイニング]で見たパイプを拡張して使います。
+このスクリプトの最初のところでは、再び translate コマンドを使い、すべての空白を \`n` に変換し、新しい行として表示します。この段階で、ファイル内のすべての単語が一行ごとになります。
+第二段階では、`sort`コマンドを使用し、テキストを元の順序からアルファベット順に並べ替えます。
+第三段階では、他の新しいコマンドの `uniq` と `-c` フラグを組み合わせ、重複行を削除し、重複している文字数を出力します。
+最後の第四段階では、3つ目のステップで生成された重複をカウントしたものを再度ソートします。
 
 > ## Challenge
 > There are still some remaining punctuation marks in the text. They are called 'smart' or 'curly' quotes.
