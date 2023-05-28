@@ -575,17 +575,17 @@ $ grep -iwE 'fr[ae]nc[eh]' *.tsv
 ~~~
 {: .bash}
 
-The shell will print out each matching line.
+シェルは一致する行をそれぞれ出力します。
 
-We include the `-o` flag to print only the matching part of the lines e.g.
-(handy for isolating/checking results):
+マッチした行だけを表示するために `-o` フラグを指定します。
+(結果の切り分けやチェックに便利です)
 
 ~~~
 $ grep -iwEo 'fr[ae]nc[eh]' *.tsv
 ~~~
 {: .bash}
 
-Pair up with your neighbor and work on these exercises:
+近くの人とペアを組んで、これらの課題に取り組んでみてください。
 
 > ## Case sensitive search
 > Search for all case sensitive instances of
