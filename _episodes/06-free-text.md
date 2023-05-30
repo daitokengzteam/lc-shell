@@ -243,7 +243,7 @@ $ tr ' ' '\n' < 201403160_01_text-clean.txt | sort | uniq -c | sort -nr > 201403
 ~~~
 {: .bash}
 
-Here we've made extended use of the pipes we saw in [Counting and mining with the shell]({{ page.root }}{% link _episodes/05-counting-mining.md %}). 
+
 ここでは、[シェルを使用した集計とマイニング]({{ page.root }}{% link _episodes/05-counting-mining.md %})で見たパイプを拡張して使います。
 このスクリプトの最初の部分では、再び translate コマンドを使い、すべての空白を `\n` に変換し、改行として表示します。
 この段階で、ファイル内の単語がそれぞれの行を持つことになります。
