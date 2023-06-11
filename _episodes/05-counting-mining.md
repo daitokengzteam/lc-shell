@@ -587,10 +587,10 @@ $ grep -iwEo 'fr[ae]nc[eh]' *.tsv
 
 近くの人とペアを組んで、これらの課題に取り組んでみてください。
 
-> ## Case sensitive search
-> Search for all case sensitive instances of
-> a whole word you choose in all four derived `.tsv` files in this directory.
-> Print your results to the shell.
+> ## 大文字小文字を区別して検索
+> このディレクトリにある4つの派生ファイル `.tsv` から、
+> 選択した単語全体の大文字と小文字を区別して検索してください。
+> また、結果をシェルに出力してください。
 >
 > > ## Solution
 > > ~~~
@@ -600,10 +600,10 @@ $ grep -iwEo 'fr[ae]nc[eh]' *.tsv
 > {: .solution}
 {: .challenge}
 
-> ## Case sensitive search in select files
-> Search for all case sensitive instances of a word you choose in
-> the 'America' and 'Africa' `.tsv` files in this directory.
-> Print your results to the shell.
+> ## 選択したファイルの大文字と小文字を区別して検索する
+> このディレクトリにある 'America' と 'Africa' の `.tsv` ファイルから、大文字と小文字を区別して選択した単語をすべて検索してください。
+> 大文字と小文字を区別して選択した単語をすべて検索してください。
+> また、結果をシェルに出力してください。
 >
 > > ## Solution
 > > ~~~
@@ -613,10 +613,10 @@ $ grep -iwEo 'fr[ae]nc[eh]' *.tsv
 > {: .solution}
 {: .challenge}
 
-> ## Count words (case sensitive)
-> Count all case sensitive instances of a word you choose in
-> the 'America' and 'Africa' `.tsv` files in this directory.
-> Print your results to the shell.
+> ## 語数を数える（大文字と小文字を区別する）
+> このディレクトリにある 'America' と 'Africa' の `.tsv` ファイルで、
+> 選んだ単語の大文字と小文字を区別するすべての単語をカウントしてください。
+> また、結果をシェルに出力してください。
 >
 > > ## Solution
 > > ~~~
@@ -626,9 +626,9 @@ $ grep -iwEo 'fr[ae]nc[eh]' *.tsv
 > {: .solution}
 {: .challenge}
 
-> ## Count words (case insensitive)
-> Count all case insensitive instances of that word in the 'America' and 'Africa' `.tsv` files
-> in this directory. Print your results to the shell.
+> ## 単語を数える（大文字・小文字を区別しない）。
+> 「America」と「Africa」の `.tsv` ファイルに含まれる、大文字と小文字を区別せずに
+> すべての単語をカウントするようこのディレクトリで実行してください。また、結果をシェルに出力してください。
 >
 > > ## Solution
 > > ~~~
