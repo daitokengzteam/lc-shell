@@ -638,9 +638,9 @@ $ grep -iwEo 'fr[ae]nc[eh]' *.tsv
 > {: .solution}
 {: .challenge}
 
-> ## Case insensitive search in select files
-> Search for all case insensitive instances of that
-> word in the 'America' and 'Africa' `.tsv` files in this directory. Print your results to  a file `results/hero.tsv`.
+> ## 選択したファイルの大文字と小文字を区別しない検索
+> このディレクトリにある 'America' と 'Africa' の `.tsv` ファイルから、大文字小文字を区別せずにその単語を検索してください。
+> また、結果をファイル `results/hero.tsv` に出力してください。
 >
 > > ## Solution
 > > ~~~
@@ -650,9 +650,9 @@ $ grep -iwEo 'fr[ae]nc[eh]' *.tsv
 > {: .solution}
 {: .challenge}
 
-> ## Case insensitive search in select files (whole word)
-> Search for all case insensitive instances of that whole word
-> in the 'America' and 'Africa' `.tsv` files in this directory. Print your results to a file `results/hero-i.tsv`.
+> ## 大文字・小文字を区別しない検索（単語全体）
+> このディレクトリにある 'America' と 'Africa' の `.tsv` ファイルから、その単語全体の大文字と小文字を区別せずに検索してください。
+> また、結果をファイル `results/hero-i.tsv` に出力してください。
 >
 > > ## Solution
 > > ~~~
@@ -662,12 +662,11 @@ $ grep -iwEo 'fr[ae]nc[eh]' *.tsv
 > {: .solution}
 {: .challenge}
 
-> ## Searching with regular expressions
-> Use regular expressions to find all ISSN numbers
-> (four digits followed by hyphen followed by four digits)
-> in `2014-01_JA.tsv` and print the results to a file `results/issns.tsv`.
-> Note that you might have to use the `-E` flag (or `-P` with some versions
-> of `grep`, e.g. with Git Bash on Windows).
+> ## 正規表現で検索する
+> 正規表現を使って `2014-01_JA.tsv` に含まれる全ての ISSN（4桁の数字の後にハイフン、
+> その後に4桁の数字）を探し、結果をファイル `results/issns.tsv` に出力してください。
+> なお、`-E`オプションを使用する必要があるかもしれません。
+>  (WindowsのGit Bashなど一部のバージョンの`grep`では`-P`)
 >
 > > ## Solution
 > > ~~~
@@ -682,24 +681,24 @@ $ grep -iwEo 'fr[ae]nc[eh]' *.tsv
 > > ~~~
 > > {: .bash}
 > >
-> > It is worth checking the file to make sure `grep` has interpreted the pattern
-> > correctly. You could use the `less` command for this.
+> > ファイルをチェックして、`grep` がパターンを正しく解釈したかどうかについて確認する価値があります。
+> > 確認のためには「less」コマンドが使用できます。`-o` オプションは、行全体ではなく、ISSN 自体のみが出力されることを意味します。
 > >
-> > The `-o` flag means that only the ISSN itself is printed out, instead of the
-> > whole line.
+> > もし、もっと高度な、おそらく単語の境界を含むものを考えついたら、その結果を共同ドキュメントで共有してください。
+> > おつかれさまでした。
 > >
-> > If you came up with something more advanced, perhaps including word boundaries,
-> > please share your result in the collaborative document and give yourself a pat on the shoulder.
+> > （訳注：上記の例では末尾のチェックデジットがXのISSNが検索できないため、
+> > '-iフラグを使って、'\d{4}-\d{3}[\dx]'とするほうがよいかもしれません。）
 > >
 > > {: .bash}
 > {: .solution}
 {: .challenge}
 
-> ## Finding unique values
-> If you pipe something to the `uniq` command, it will filter out adjacent duplicate lines.
-> In order for the 'uniq' command to only return unique values though, it needs to be used
-> with the 'sort' command. Try piping the output from the command in the last exercise
-> to `sort` and then piping these results to 'uniq' and then `wc -l` to count the number of unique ISSN values.
+> ## 一意な値を見つける
+> ‘uniq`コマンドに何かをパイプで渡すと、隣接する重複行をフィルタリングしてくれます。
+> しかし、'uniq' コマンドが一意な値だけを返すようにするには、'sort' コマンドと一緒に使用
+> する必要があります。前回の演習のコマンドの出力を `sort` にパイプし、その結果を 'uniq'
+> にパイプし、`wc -l` で一意な ISSN 値の数を数えてみてください。
 >
 > > ## Solution
 > > ~~~
@@ -715,19 +714,19 @@ $ grep -iwEo 'fr[ae]nc[eh]' *.tsv
 > {: .solution}
 {: .challenge}
 
-### Using a Loop to Count Words
+### ループを使って単語をカウントする
 
-We will now use a loop to automate the counting of certain words within a document. For this, we will be using the _[Little Women](http://www.gutenberg.org/cache/epub/514/pg514.txt)_ e-book from [Project Gutenberg](https://www.gutenberg.org/). The file is inside the `shell-lesson` folder and named `pg514.txt`. Let's rename the file to `littlewomen.txt`. 
+ここでは、ループを使って、文書内の特定の単語のカウントを自動化することにします。
+ここでは、[Project Gutenberg](https://www.gutenberg.org/) の _[Little Women](http://www.gutenberg.org/cache/epub/514/pg514.txt) _ （若草物語）の電子書籍を使用します。ファイルは `shell-lesson` フォルダの中にあり、名前は `pg514.txt` です。このファイルを `littlewomen.txt` にリネームしてみましょう。
 
 ~~~
 $ mv pg514.txt littlewomen.txt
 ~~~
 
-This renames the file to something easier to type.
+これで、ファイル名が入力しやすいものに変更されます。
 
-Now let's create our loop. In the loop, we will ask the computer to go through the text, looking for each girl's name,
-and count the number of times it appears. The results will print to the screen.
-
+では、ループを作りましょう。ループの中では、コンピュータに、テキストからそれぞれ
+四姉妹の名前を探し出し、それらが現れる回数を数えるよう問い合わせます。結果は画面に出力されます。
 ~~~
 $ for name in "Jo" "Meg" "Beth" "Amy"
 > do
@@ -750,31 +749,31 @@ Amy
 ~~~
 {: .output}
 
-What is happening in the loop?  
-+ `echo "$name"` is printing the current value of `$name`
-+ `grep "$name" littlewomen.txt` finds each line that contains the value stored in `$name`. The `-w` flag finds only the whole word that is the value stored in `$name` and the `-o` flag pulls this value out from the line it is in to give you the actual words to count as lines in themselves.
-+ The output from the `grep` command is redirected with the pipe, `|` (without the pipe and the rest of the line, the output from `grep` would print directly to the screen)
-+ `wc -l` counts the number of _lines_ (because we used the `-l` flag) sent from `grep`. Because `grep` only returned lines that contained the value stored in `$name`, `wc -l` corresponds to the number of occurrences of each girl's name.
+ループで何が起こっているのですか？
++ `echo "$name"` は `$name` の現在の値を出力しています
++ `grep "$name" littlewomen.txt` は、`$name` に格納されている値を含む各行を見つけます。 `-w` フラグは、`$name` に格納されている値である単語全体のみを検索し、`-o` フラグは、その値が含まれている行からこの値を引き出して、実際の単語を行としてカウントするようにします。
++ `grep` コマンドからの出力は、パイプ `|` でリダイレクトされます (パイプと残りの行がないと、`grep` からの出力は画面に直接出力されます)
++ `wc -l` は、`grep` から送信された _行_ (`-l` フラグを使用したため) の数をカウントします。 `grep` は `$name` に格納された値を含む行のみを返すため、`wc -l` は四姉妹の名前の出現回数に対応します。
 
-> ## Why are the variables double-quoted here?
+
+> ## なぜここで変数が二重引用符でくくられるのか？
 >
-> a) In [episode 4]({{ page.root }}{% link _episodes/04-loops.md %}) we learned to
-> use `"$..."` as a safeguard against white-space being misinterpreted.
-> Why _could_ we omit the `"`-quotes in the above example?
+> a) [episode 4]({{ page.root }}{% link _episodes/04-loops.md %})では、空白が誤って解釈
+> されるのを防ぐために `"$..."` を使用することを学びました。
+> 上記の例では、なぜ `"`-quotes" を省略することができるのでしょうか？
 > 
-> b) What happens if you add `"Louisa May Alcott"` to the first line of
-> the loop and remove the `"` from `$name` in the loop's code?
+> b) ループの最初の行に `"Louisa May Alcott"` を追加し、ループのコードで `$name` から `"`
+> を削除するとどうなるか？
 > 
 >> ## Solutions
 >> 
->> a) Because we are explicitly listing the names after `in`,
->> and those contain no white-space. However, for consistency
->> it's better to use rather once too often than once too rarely.
+>> a) `in` 以降の名前を明示的に列挙しており、それらの名前には空白がないため。
+>> しかし、一貫性を保つためには、稀にしか使わないよりは、むしろ頻繁に使った方が良い。
 >> 
->> b) Without `"`-quoting `$name`, the last loop will try to execute
->> `grep Louisa May Alcott littlewomen.txt`. `grep` interprets only the
->> first word as the search pattern, but `May` and `Alcott` as filenames.
->> This produces two errors and a possibly untrustworthy count:
+>> b) `"`-$name` を引用しないと、最後のループでは `grep Louisa May Alcott littlewomen.txt`
+>> を実行しようとします。grep` は最初の単語だけを検索パターンとして解釈し、`May` と 
+>> `Alcott` はファイル名として解釈します。
+>> このため、2つのエラーと信頼できないカウントが発生する可能性があります：
 >> ~~~
 >> ...
 >> Louisa May Alcott
@@ -786,8 +785,8 @@ What is happening in the loop?
 > {: .solution}
 {: .challenge}
 
-> ## Selecting columns from our article dataset
-> When you receive data it will often contain more columns or variables than you need for your work. If you want to select only the columns you need for your analysis, you can use the `cut` command to do so. `cut` is a tool for extracting sections from a file. For instance, say we want to retain only the `Creator`, `Volume`, `Journal`, and `Citation` columns from our article data. With `cut` we'd:
+> ## 記事データセットから列を選択する
+> データを受け取ったとき、作業に必要な以上の列や変数が含まれていることがよくあります。分析に必要な列だけを選択したい場合は、`cut`コマンドを使用することができます。cut`はファイルからセクションを抽出するためのツールです。例えば、記事データから `Creator`, `Volume`, `Journal`, `Citation` の列だけを残したい場合、’cut` を使うと、次のようになります:
 >~~~
 > cut -f 2,4,5,8 2014-01_JA.tsv | head
 >~~~
@@ -807,12 +806,12 @@ What is happening in the loop?
 >~~~
 >{: .output}
 >
-> Above we used `cut` and the `-f` flag to indicate which columns we want to retain. `cut` works on tab delimited files by default. We can use the flag `-d` to change this to a comma, or semicolon or another delimiter.
-> If you are unsure of your column position and the file has headers on the first line, we can use `head -n 1 <filename>` to print those out.
-> ### Now your turn
->Select the columns `Issue`, `Volume`, `Language`, `Publisher` and direct the output into a new file. You can name it something like `2014-01_JA_ivlp.tsv`.
+> 上記では、`cut`と`-f`オプションを使用して、保持したい列を指定しました。cut` はデフォルトでタブ区切りのファイルに対して機能します。`-d`オプション を使って、コンマやセミコロンなどの区切り文字に変更することができます。
+> もし、列の位置がわからず、ファイルの1行目にヘッダーがある場合は、`head -n 1 <filename>` を使って、それらを出力することができます。
+> ### 次はあなたの番です
+>`Issue`、`Volume`、`Language`、`Publisher`の列を選択し、新しいファイルに出力するように指示します。ファイル名は‘2014-01_JA_ivlp.tsv`にします。
 >> ## Solution
->> First, let's see where our desired columns are:
+>> まず、目的の列がどこにあるのかを確認します。:
 >>
 >>~~~
 >> head -n 1 2014-01_JA.tsv
@@ -824,12 +823,12 @@ What is happening in the loop?
 >>~~~
 >>{: .output}
 >>
->>Ok, now we know `Issue` is column 3, `Volume` 4, `Language` 11, and `Publisher` 12.
->> We use these positional column numbers to construct our `cut` command:
+>>できましたね。これで、`Issue`が列3、`Volume`が列4、`Language`が列11、`Publisher`が列12 であることがわかりました。
+>>列番号を使用して、`cut` コマンドを作成します:
 >>```
 >> cut -f 3,4,11,12 2014-01_JA.tsv > 2014-01_JA_ivlp.tsv
 >>```
->> We can confirm this worked by running head on the file:
+>> ファイルで headコマンドを実行すると、結果を確認できます:
 >>```
 >>head 2014-01_JA_ivlp.tsv
 >>```
