@@ -10,18 +10,16 @@ title: Setup
 >## 端末のセットアップ
 >
 >Bashは、ほとんどのLinuxディストリビューションとmacOSでデフォルトのシェルとして使用されています。
->Windowsユーザーは、UNIX環境を提供するために、Git Bashをインストールする必要があります。
+>Windowsユーザーは、UNIX環境を提供するために Git Bash をインストールする必要があります。
 >
->- **Linux:**デフォルトのシェルは通常Bashですが、マシンの設定が異なる場合は、ターミナルを開いて`bash`と入力することで実行することができます。
- 何もインストールする必要はありません。Bashシェルを起動するには、アプリケーションでTerminal（端末）を探します。
+>- **Linux:** デフォルトのシェルは通常Bashですが、マシンの設定が異なる場合は、ターミナルを開いて`bash`と入力することで実行することができます。何もインストールする必要はありません。Bashシェルを起動するには、アプリケーションでTerminal（端末）を探します。
 >
->- macOS:**Bashは、Catalina以前のmacOSのすべてのバージョンでデフォルトのシェルです。あなたは何かをインストールする必要はありません。
-ターミナルを `/Applications/Utilities` から開くか、スポットライト検索でBashシェルを起動します。
+>- **macOS:** Bashは、Catalina以前のmacOSの全てのバージョンでデフォルトのシェルです。何もインストールする必要はありません。ターミナルを `/Applications/Utilities` から開くか、スポットライト検索でBashシェルを起動します。
 >
->- Windows:** Windowsでは、通常CMD（コマンドプロンプト）またはPowerShellがデフォルトのシェル環境として利用可能です。これらは、Windowsシステム特有の構文とアプリケーションのセットを使用し、より広く使用されているUNIXユーティリティとは互換性がありません。しかし、BashシェルをWindowsにインストールすることで、UNIXに似た環境を提供することができます。このレッスンでは、[Git for Windows](https://gitforwindows.org/)パッケージの一部であるGit Bashを使用することをお勧めします：
->- 最新のGit for Windows [installer](https://gitforwindows.org/)をダウンロードしてください。
->- `.exe`をダブルクリックすると、デフォルトの設定でインストーラー（例：`Git-2.13.3-64-bit.exe`）を実行します。
->- インストールしたら、スタートメニューからGit Bashを選択してシェルを開きます（Gitフォルダの中）。
+>- **Windows:** Windowsでは、通常CMD（コマンドプロンプト）または PowerShell がデフォルトのシェル環境として利用可能です。これらは、Windowsシステム特有の構文とアプリケーションのセットを使用し、より広く使用されているUNIXユーティリティとは互換性がありません。しかし、BashシェルをWindowsにインストールすることで、UNIXに似た環境を提供することができます。このレッスンでは、[Git for Windows](https://gitforwindows.org/)パッケージの一部である Git Bash を使用することをお勧めします：
+>-- 最新のGit for Windows [installer](https://gitforwindows.org/)をダウンロードしてください。
+>-- `.exe`をダブルクリックすると、デフォルトの設定でインストーラー（例：`Git-2.13.3-64-bit.exe`）を実行します。
+>-- インストールしたら、スタートメニューからGit Bashを選択してシェルを開きます（Gitフォルダの中）。
 >
 >また、Windows上でBashコマンドを実行するための、より高度なソリューションも用意されています。 Windows 10 では、Bash シェルのコマンドラインツールが提供されており、[Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)を有効にしている場合に使用できます。
 > 
