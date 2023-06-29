@@ -5,7 +5,7 @@ title: Setup
 
 このライブラリーカーペントリーのレッスンに参加するには、UNIXのシェル環境が必要です。
 
-具体的には、LinuxとmacOSに標準搭載されているBash（[Bourne Again Shell](https://en.wikipedia.org/wiki/Bash_(Unix_shell)) を使用します。macOS Catalinaユーザーはzsh（Zシェル）がデフォルトバージョンとなります。Windowsユーザーであっても、Bashを学ぶことで、個人のマシンで強力なツール群を利用できるようになり、さらに、ほとんどすべてのサーバーやスーパーコンピュータで使われている標準的なリモートインターフェースに慣れることができます。
+具体的には、LinuxとmacOSに標準搭載されているBash（[Bourne Again Shell](https://en.wikipedia.org/wiki/Bash_(Unix_shell))）を使用します。macOS Catalinaユーザーはzsh（Zシェル）がデフォルトバージョンとなります。WindowsユーザーであってもBashを学ぶことで、個人のマシンで強力なツール群を利用できるようになり、さらに、ほとんど全てのサーバーやスーパーコンピュータで使われている標準的なリモートインターフェースに慣れることができます。
 
 >## 端末のセットアップ
 >
