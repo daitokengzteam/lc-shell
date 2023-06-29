@@ -17,11 +17,11 @@ title: Setup
 >- **macOS:** Bashは、Catalina以前のmacOSの全てのバージョンでデフォルトのシェルです。何もインストールする必要はありません。ターミナルを `/Applications/Utilities` から開くか、スポットライト検索でBashシェルを起動します。
 >
 >- **Windows:** Windowsでは、通常CMD（コマンドプロンプト）または PowerShell がデフォルトのシェル環境として利用可能です。これらは、Windowsシステム特有の構文とアプリケーションのセットを使用し、より広く使用されているUNIXユーティリティとは互換性がありません。しかし、BashシェルをWindowsにインストールすることで、UNIXに似た環境を提供することができます。このレッスンでは、[Git for Windows](https://gitforwindows.org/)パッケージの一部である Git Bash を使用することをお勧めします：
->  - 最新のGit for Windows [installer](https://gitforwindows.org/)をダウンロードしてください。
->  - `.exe`をダブルクリックすると、デフォルトの設定でインストーラー（例：`Git-2.13.3-64-bit.exe`）を実行します。
->  - インストールしたら、スタートメニューからGit Bashを選択してシェルを開きます（Gitフォルダの中）。
+>    - 最新のGit for Windows [installer](https://gitforwindows.org/)をダウンロードしてください。
+>    - `.exe`をダブルクリックすると、デフォルトの設定でインストーラー（例：`Git-2.13.3-64-bit.exe`）を実行します。
+>    - インストールしたら、スタートメニューからGit Bashを選択してシェルを開きます（Gitフォルダの中）。
 >
->また、Windows上でBashコマンドを実行するための、より高度なソリューションも用意されています。 Windows 10 では、Bash シェルのコマンドラインツールが提供されており、[Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)を有効にしている場合に使用できます。
+>また、Windows上でBashコマンドを実行するための、より高度なソリューションも用意されています。Windows 10 では、Bash シェルのコマンドラインツールが提供されており、[Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)を有効にしている場合に使用できます。
 > 
 >さらに、すでにUnixシェルを持っているリモートコンピュータやサーバーで、WindowsマシンからBashコマンドを実行することができます。これは通常、Secure Shell (SSH)クライアントを介して行うことができます。 Windowsコンピュータで無料で利用できるこのようなクライアントの1つに、[PuTTY](https://www.putty.org/)があります。
 >
