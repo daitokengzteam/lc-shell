@@ -19,7 +19,7 @@ WindowsユーザーであってもBashを学ぶことで、個人のマシンで
 >- **macOS:** 　Bashは、Catalina以前のmacOSの全てのバージョンでデフォルトのシェルです。何もインストールする必要はありません。ターミナルを `/Applications/Utilities` から開くか、スポットライト検索でBashシェルを起動します。
 >
 >- **Windows:** 　Windowsでは、通常CMD（コマンドプロンプト）または PowerShell がデフォルトのシェル環境として利用可能です。これらはWindowsシステム特有の構文とアプリケーションのセットを使用し、より広く使用されているUNIXユーティリティとは互換性がありません。しかし、BashシェルをWindowsにインストールすることで、UNIXに似た環境を提供することができます。このレッスンでは、[Git for Windows](https://gitforwindows.org/)パッケージの一部である Git Bash を使用することをお勧めします：
->    - 最新のGit for Windows [installer](https://gitforwindows.org/)をダウンロードしてください。（訳注：Git SCMをダウンロードする）
+>    - 最新のGit for Windows [installer](https://gitforwindows.org/)をダウンロードしてください。（訳注：Git SCMをダウンロードしてください）
 >    - `.exe`をダブルクリックすると、デフォルトの設定でインストーラー（例：`Git-2.13.3-64-bit.exe`）を実行します。
 >    - インストールしたら、スタートメニューからGit Bashを選択してシェルを開きます（Gitフォルダの中にあります）。
 >
@@ -41,7 +41,7 @@ WindowsユーザーであってもBashを学ぶことで、個人のマシンで
 >~~~~
 >{: .bash}
 >
-> カレントディレクトリにあるフォルダーをご覧ください。（訳注：デスクトップ上の`shell-lesson`が見つからない場合は、`explorer.exe .`（起動ファイル名、半角空白、半角ピリオド）と入力し、<kbd>enter</kbd>キーを押してください。エクスプローラーが起動するので、その中に`shell-lesson`のフォルダを移動させます）　4. 最後に入力する：
+> カレントディレクトリにあるフォルダーをご覧ください。（訳注：デスクトップ上の`shell-lesson`が見つからない場合は、`explorer.exe .`（起動ファイル名、半角空白、半角ピリオド）と入力し、<kbd>enter</kbd>キーを押してください。エクスプローラーが起動するので、その中に`shell-lesson`のフォルダを移動させます）　4. それからタイプします：
 >~~~~
 >$ pwd
 >~~~~
