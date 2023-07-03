@@ -1,5 +1,5 @@
 ---
-title: Setup
+title: セットアップ
 ---
 FIXME
 
